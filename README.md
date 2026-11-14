@@ -378,6 +378,18 @@ Learned in Nov 2026 from Sam Witteveen's "Gemini 4 Carbon is Live" ([watch](http
 - **Sound:** the reference has no music anywhere (measured: the quiet gaps sit 31 dB under the voice with no steady floor) and no sound effects I could find (not verified). Mine: voice at −14 LUFS, no music under the body, an optional bed in the first 20–30 s and last 15–20 s at 22 LU under, silent builds by default.
 - **Premium polish:** nothing takes longer than 15 frames, a finished board holds 1.5 s, 6 words or fewer per board and 4 or fewer per hand note, one blue and one yellow, real captures before drawings. The last frame is the question bubbles, not an end card. See [What makes it premium](#what-makes-it-premium).
 
+## Podcast editing (reels and full episodes)
+
+Learned on the Union Square podcast (Nov 14, 2026: 28 min, two speakers, four reels plus a 16:9 episode). The full recipe is in [.claude/skills/podcast-clips/SKILL.md](.claude/skills/podcast-clips/SKILL.md). It sits on top of a visual style; Minimal Proof is the default for podcast reels.
+
+- **Transcribe with speaker labels**, then map the speakers to faces. Pick 4–5 reels of 45–60 s, each one idea with a first line that works as a hook on its own and a clean closer.
+- **Fact-check before building.** Drop a reel whose point rests on an unsupported claim, and cut single unsupported lines.
+- **Words always finish.** Each cut ends at least 120 ms after the word and runs on to a 100 ms quiet point (a 30 ms window cuts inside "per-cent"). Each cut starts at the last quiet point before the onset. Check the risky endings on a waveform sheet.
+- **Reframe with Apple Vision.** One static 9:16 crop per speaker run, with a 1.12× punch-in on the key line only and a stacked two-shot for back-and-forth exchanges. On the episode, start wide and punch in about 1.15–1.3× on longer answers.
+- **Full episode.** A ~30 s cold open of the best lines, captioned and cut to an Ocular beat, then a title card and name cards. After that, loose cuts, no captions, sourced cards where things are named, stingers at chapter changes and an outro bed.
+- **Sound.** Voice at −14 LUFS, plus a light compressor on the dialogue role, because a bench recording runs 4–5 LU. SFX come from Ocular Sounds (`~/Music/Ocular_Sounds/`, searched by CSV tag), at most 6 a minute on reels and never on cuts.
+- **Delivery.** FCPXML 1.14 with every time snapped to the 1/30 s grid, one folder per reel (FCPXML, SRT, preview), validated against FCP's own DTD.
+
 ## Reel music folder
 
 For future video edits, check `/Users/harnoor/Music/Reel Music/` for background music and choose a track that fits the script's mood. This is the user's preferred local music library.
