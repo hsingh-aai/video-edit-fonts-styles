@@ -54,6 +54,37 @@ Sample stills: [styles/samples/riley/](../../../styles/samples/riley/). Stills 1
 - **Screen recording + face card** for every demo. Sync by audio cross-correlation (`camera = screen + offset`). If the recording is missing, rebuild with Playwright (light mode for browser pages; Excalidraw in dark mode).
 - **Logos** in tiles are the real product marks, used to identify the product being reviewed. Don't make up product UI or numbers.
 
+## Harnoor's own version: Desk Notes (Nov 10–14, 2026)
+
+Harnoor asked that Riley edits "not look copied". Keep Riley's **structure** (face hook, a held demo page with the face visible, chapter cards, a list that fills in and ends as the recap) and use his **own surfaces**. This was first built in `videos/fable-software-dev/` and then in `videos/jensen-for-devs/`.
+
+| Riley reference | Desk Notes (Harnoor's) |
+| --- | --- |
+| White page, grey dots every 45 px | Warm paper `#F6F2EA` with a 40 px square grid, or the **dark variant** below |
+| Tomato bottom bar | No bar. A bottom **section strip**: sky number chip and section title on one side, a progress tracker of squares on the other |
+| Plain portrait face card, no ring | Face **badge** ringed in sky `#3D8BFF`, bottom-aligned with the demo card |
+| White app tiles and scramble labels | Sliding pill **chips** (the question in sky), 8 frames in and 6 out |
+| Centred chapter card | A full-width sky **band wipe** (8 frames), a big white number, a sentence-case title and a mono "part n of N" |
+| Dark Excalidraw "N reasons" board | A **lessons card** in Poppins: numbered sky circles, the lesson typed in at 25 characters a second, and a sky underline |
+| Red click ring | A sky rounded **highlight box** on the thing being read |
+
+**Dark variant** (Harnoor, Nov 14: "dark theme background it will look better"):
+- Page near-black warm charcoal (about `#121314`) with a faint grid (lines at 6–8% white). Text off-white `#EDEAE4`, keeping the single sky accent.
+- Screen recordings and real pages stay as shot. Give them a 1 px light border and a soft shadow, and dim them about 5% if white pages glare. Never invert.
+- Chapter cards and boards get dark versions, with small text at ≥4.5:1 contrast. Dark-mode posts (X) sit naturally on it.
+
+## Face badge rules (Harnoor's feedback, Nov 14, 2026)
+
+The first Jensen for devs build had his head pushed to one side of the badge and cut by its top edge, with only half the face reading. He also looked away from the screen recording. The rules:
+- **Centre the face.** Track it per piece with Apple Vision: the median face rect per spine piece, or per same-shot run, never one fixed crop for the whole video.
+  - Face centred horizontally, eyes about 40% down the badge, and the whole head inside with headroom. Nothing cut by the badge edge.
+- **Grow the card, not the face.** If the face won't fit, make the badge taller or wider, or zoom the crop out ("stretch if you have to" means stretch the card). Never change the picture's aspect ratio.
+- **Badge on the side the face looks toward.** He naturally looks toward screen-right, so the badge goes **bottom-left** and the demo card shifts right. His gaze then points into the content instead of away from it.
+  - Read the gaze per run from the Vision landmarks (yaw).
+- **Don't mirror the camera to fix gaze.** A flip mirrors his face asymmetry, hair part, glasses and any text or logos, and it breaks continuity with the full-face shots. Use it only on a shot with no text where nothing else works, and note it in `project.md`.
+- **Portrait inserts** (phone pickups) go in the same badge, or in a portrait card on the page, under the same centring rule. Never stretch them.
+- **Check stills** at 5+ points across the video (hook, each chapter, the busiest demo) before calling it done.
+
 ## The shots (kit: `kit/riley.py`)
 | Shot | Builder | Spec |
 |---|---|---|
