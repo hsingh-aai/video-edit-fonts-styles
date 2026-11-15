@@ -255,6 +255,8 @@ The real thing on top, me underneath. Learned from a reel by Roberto P. Nickson 
 - **Sound (measured Nov 9, 2026):** a fast levelled voice at −14 LUFS with a 2 LU range, over one dark low bed 15 LU under it for the whole reel. Short ticks land on named things (the reference has 19 in a minute) and soft swells on section changes; only 3 of 36 cuts carry a sound. My cap is 16 ticks and 4 swells a minute.
 - **Premium polish:** three type sizes, nothing eases longer than 10 frames, green is the only accent, and the cheat sheet must work as a still. See [What makes it premium](#what-makes-it-premium).
 
+- **My pixel variant (Nov 15, 2026):** half screen, sometimes full. It uses ALL CAPS Pixelify Sans captions and titles, with VT323 for terminal and source lines (both OFL, in `fonts/`), a night-CRT black with one amber accent, and facts drawn as visuals (tiles going dark, a spike, a map, a mail queue, a timeline). Post cards are always whole, with the header, full text and centred, and there's no big view count and no extra labels. Built on the Microsoft 365 outage reel.
+
 Full spec and kit: [.claude/skills/rpn-style/SKILL.md](.claude/skills/rpn-style/SKILL.md). Sample stills: [styles/samples/rpn/](styles/samples/rpn/).
 
 ## Alternative style: Graph Paper (from a reference reel)

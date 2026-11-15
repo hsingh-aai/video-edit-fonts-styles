@@ -111,6 +111,30 @@ The CTA is the screenshot and the caption ("I'll list the others below in the ca
 
 Shared rules across all styles: [What makes it premium](../../../README.md#what-makes-it-premium).
 
+## Harnoor's pixel variant (Microsoft 365 outage reel, Nov 15, 2026)
+
+Built in `videos/msft-outage/rpn/` from a 1:34 take, cut to a 60.7 s reel. It keeps RPN's structure and has its own look. These are the final decisions after Harnoor's review:
+
+- **Half screen, sometimes full.** About 71% split, 23% full and 6% face, chosen by meaning, not a fixed rhythm (RPN measured 71 / 22 / 7). Full-screen beats are for the proof posts, the big stat or map, the timeline and the cheat sheet.
+- **Pixel type, ALL CAPS.** Captions, title cards and the cheat sheet use **Pixelify Sans** SemiBold in caps (46 px in a 72 px box). Harnoor tried lowercase and went back: "all caps was better design". **VT323** is for the terminal, source tags and sub-lines. Both are OFL, in `fonts/pixelifysans/` and `fonts/vt323/`.
+  - Pixelify's "5" reads as an S ("365" looks like "36S"), so draw a plain pixel 5 on the font's digit box.
+  - Turn the "fi" ligature off.
+  - Render pixel type with nearest-neighbour scaling, never blurred.
+  - Press Start 2P was tried first and dropped.
+- **Palette:** night-CRT black with a faint pixel dot grid and **one amber accent `#FFB000`** (RPN uses green). The marks are an amber marker multiplied over the real text.
+- **Facts as visuals:**
+  - product tiles going dark one by one (real product icons)
+  - a reports spike counting to the sourced peak
+  - a pixel world map with the sourced country count
+  - a held-mail queue with a 48 h clock
+  - a ticking timeline from the incident start to the last fix
+  - a typed terminal with the real incident IDs
+  - big pixel numbers
+- **Post cards: always whole.** Show the **full header** (avatar, name, verified badge, @handle, date) and the **full post text**, scaled to fit, never cropped to a 2-line fragment. **Centre** the card in its area (top half or full frame) with even margins. Mark the key words. **No big view-count pill.** Keep at most the small native count inside the post ("22M views doesn't matter").
+- **No extra labels.** Don't tag drawings with "illustration (his analogy)", "recreation" and the like. Keep only what accuracy needs: the source tag on real posts and pages, and a short source line on numbers from real data (e.g. "Downdetector via Reuters"). If a drawing could pass for a real screenshot, redraw it so it's obviously drawn rather than adding a label.
+- **CTA from his own line** ("send this to a friend"), not a comment keyword.
+- **Face:** one static crop per spine clip from Apple Vision, centred in the lower half on splits, a uniform scale of about 1.25–1.35, and never mirrored.
+
 ## Build notes
 
 - Kit functions return 1080×1920 PIL frames for a time `t`, so a build loops frames and pipes them to ffmpeg. `kit/sample.py` renders the six stills in `styles/samples/rpn/` from Harnoor's img1092 footage.
