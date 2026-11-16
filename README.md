@@ -42,8 +42,8 @@ Every named style, with a frame from its reference build. Click a name for its s
 | <img src="styles/screenshots/warm-witty.jpg" alt="Warm & witty" width="180"> | <img src="styles/screenshots/editorial.jpg" alt="Editorial" width="180"> | <img src="styles/screenshots/dark-cinematic.jpg" alt="Dark cinematic" width="180"> | <img src="styles/screenshots/proof-stack.jpg" alt="Proof Stack" width="180"> |
 | **[Split Stage](#alternative-style-split-stage-nick-saraev-style-my-favourite)** (my favourite) | **[Kallaway crop](#kallaway-crop-pop-out-head)** (Split Stage framing) | **[Dark Stage](#alternative-style-dark-stage)** | **[Minimal Proof](#alternative-style-minimal-proof)** |
 | <img src="styles/screenshots/split-stage.jpg" alt="Split Stage" width="180"> | <img src="styles/screenshots/kallaway-crop.jpg" alt="Kallaway crop" width="180"> | <img src="styles/screenshots/dark-stage.jpg" alt="Dark Stage" width="180"> | <img src="styles/screenshots/minimal-proof.jpg" alt="Minimal Proof" width="180"> |
-| **[RPN](#alternative-style-rpn)** | **[Graph Paper](#alternative-style-graph-paper-from-a-reference-reel)** |  |  |
-| <img src="styles/screenshots/rpn.jpg" alt="RPN" width="180"> | <img src="styles/screenshots/graph-paper.jpg" alt="Graph Paper" width="180"> |  |  |
+| **[RPN](#alternative-style-rpn)** | **[Graph Paper](#alternative-style-graph-paper-from-a-reference-reel)** **[Mariah Paper](#alternative-style-mariah-paper-from-a-reference-reel)** |  |
+| <img src="styles/screenshots/rpn.jpg" alt="RPN" width="180"> | <img src="styles/screenshots/graph-paper.jpg" alt="Graph Paper" width="180"> <img src="styles/screenshots/mariah-paper.jpg" alt="Mariah Paper" width="180"> |  |
 
 ### Long-form styles (16:9)
 
@@ -275,6 +275,22 @@ A whiteboard explainer with my face under it. Learned from a reference reel on N
 - **Premium polish:** three type sizes, entrances settle in 6–9 frames, red on one thing per scene, every real image carries a credit, and the closer must work as a still. See [What makes it premium](#what-makes-it-premium).
 
 Full spec and kit: [.claude/skills/graph-paper-style/SKILL.md](.claude/skills/graph-paper-style/SKILL.md). Sample stills: [styles/samples/graph-paper/](styles/samples/graph-paper/).
+
+## Alternative style: Mariah Paper (from a reference reel)
+
+<img src="styles/screenshots/mariah-paper.jpg" alt="Mariah Paper: post over the face with an emphasis beat" width="270">
+
+A fast talking-head tip where the real screen backs every claim. Learned from a reference reel on Nov 15, 2026 (the creator's handle isn't visible in the video; "Mariah" is my name for it): techniques only, none of their footage or branding. Use it when I ask for Mariah Paper or "the Mariah style". It suits tool tips, model or product news and reels that end in a comment keyword.
+
+- **Layout:** the face fills the frame about 40% of the time. Proof lands as a rounded card over the chest, as a screenshot that takes the top of the frame (down to y 540–570), or on a full-screen paper board (about a third of the reel, 2.5–9 s a visit). The face always returns between boards.
+- **Two boards:** crumpled cream paper (`#EDE3D4`) to read a post or a diagram, with a red marker bar stepping through the phrases; red paper (`#D93A33`) for a table, a chart or a stack of images.
+- **Captions:** 1–3 lowercase words in white SF Pro Semibold at y 1437, no box and no highlight. Red on cream paper, white on red, under the card.
+- **Emphasis:** a white Playfair italic lead-in over one heavy red phrase, two or three times. The comment call is italic "comment" over the keyword in white Archivo Black caps on a red box.
+- **Motion:** hard cuts only (20 shots in 68 s, median 2.9 s). Movement lives inside the proof: the marker bar, a scroll, a selection, progress bars. Face jump cuts alternate wide and tight.
+- **Sound (measured Nov 15, 2026, from the mix):** −14.3 LUFS, 245 wpm with no pause over 0.3 s. Gap levels point to a bed from frame 0 and a sound on board changes; nobody listened.
+- **Premium polish:** three layouts with one job each, real screenshots only (one drawn diagram), red as the single accent, cards hold at least 1.5 s. See [What makes it premium](#what-makes-it-premium).
+
+Full spec and kit: [.claude/skills/mariah-paper-style/SKILL.md](.claude/skills/mariah-paper-style/SKILL.md). Sample stills: [styles/samples/mariah-paper/](styles/samples/mariah-paper/).
 
 ## Long form: Screen Share (default)
 
