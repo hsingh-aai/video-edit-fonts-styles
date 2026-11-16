@@ -135,6 +135,24 @@ Built in `videos/msft-outage/rpn/` from a 1:34 take, cut to a 60.7 s reel. It ke
 - **CTA from his own line** ("send this to a friend"), not a comment keyword.
 - **Face:** one static crop per spine clip from Apple Vision, centred in the lower half on splits, a uniform scale of about 1.25–1.35, and never mirrored.
 
+### One accent per series, and the series so far
+
+Each RPN-pixel series gets its **own accent and seam**, so no two read as the same template and none reads as RPN's terminal green:
+
+| Series | Accent | Seam | Twist |
+|---|---|---|---|
+| Microsoft 365 outage (`videos/msft-outage/rpn/`) | amber `#FFB000` | plain line | product tiles, mail queue, terminal |
+| Starship ship catch (`videos/starship-catch/`) | ice cyan `#5CE1FF` | **telemetry rail**: 2 px line with ruler ticks (tall every 5th), caption box sits on it | posts play their clip **live inside the card**; big VT323 stats with a cyan glow |
+| Jensen reels v2 (`videos/jensen-for-devs/reels/`) | lilac `#B49CFF` (Nvidia green is too close to RPN) | **circuit trace**: 2 px line with square solder pads every 108 px | night violet canvas, hard pixel shadows, same bed on all three |
+
+- **Numbers in VT323.** Pixelify's "2" reads as an "8" and its "5" as an "S", so stats and caption numbers use VT323 in the accent colour.
+- **Caption height follows the framing.** On the seam for splits, y 1352 on full-screen beats, and lower (y 1500) on full-face holds if the seam height would sit on his mouth.
+- **Converting a finished reel to RPN** (Jensen v2): keep the cuts, hooks and claim tables, rebuild only the look, write it as v2 beside an untouched v1.
+
+### Object-in-hand beats: no visuals (Starship, Nov 15)
+
+Harnoor's rule: when he holds up or points at a physical object, the shot is **full face at scale 1, whole frame, no graphics**. The object and his hands are the visual. Move the caption above his head (about y 210) so it clears the object. Confirm each such beat on 3 stills. Splits go only on lines that aren't about the object (the event, a stat, a post). On the Starship reel that came out as about 34% split and 66% face, which is right for an object-led take.
+
 ## Build notes
 
 - Kit functions return 1080×1920 PIL frames for a time `t`, so a build loops frames and pipes them to ffmpeg. `kit/sample.py` renders the six stills in `styles/samples/rpn/` from Harnoor's img1092 footage.
