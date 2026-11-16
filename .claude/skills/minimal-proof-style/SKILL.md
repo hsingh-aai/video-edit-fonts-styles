@@ -73,3 +73,13 @@ Shared rules and the measurements behind them: [What makes it premium](../../../
 - When Harnoor has edited the project in FCP, start from his exported `.fcpxmld/Info.fcpxml` and keep it verbatim. Only add new assets and lanes, and rename the project. Re-rendered media gets new filenames.
 - **Deliver:** an FCPXML, an SRT, a preview MP4 (rendered from the final FCPXML) and the graphics to `~/Movies/FCP/<name>-graphics/`.
 - Reference builds (local, not committed): `videos/anthropic-residency-reels/scripts/build.py` (v1) and `scripts/v2.py` (music + SFX + building on Harnoor's FCP edit).
+
+## 10-second ASMR unboxing (IMG_1602, Nov 15, 2026)
+
+For "make a 10 second ASMR unboxing" from a long silent take (`videos/asmr-1602/`):
+- **Pick shots by sound.** Make a contact sheet (every 2 s, then 0.5 s on candidates) plus a spectral-flux onset and RMS map (HPF 150 Hz). Start each shot on a sound: flap rub, lid lift, card scrape, tear, click. End on a quiet hero hold.
+- **Shape:** about 6 hard cuts in 10 s (301 frames), clean start frame, reveal in the first 4 s, one 1.1× punch-in on the smallest sound, 0.3 s fade-out.
+- **No captions, graphics or bed.** The natural sound is the content; an ambience bed fights a desk unboxing. Use the warm LUT.
+- **Audio:** clean the whole natural track once in source time (HPF 60 Hz, gentle `afftdn` nr 8), gain each shot toward −21 LUFS, fast peak limiter at −2 dBFS, 6 ms de-click fades. Target about −16 LUFS integrated, −1 dBTP.
+- **FCP caps clip gain at +12 dB.** When quiet shots need more, attach the cleaned, levelled full-length track as a connected clip on lane −1 at the same source time and park the clip's own audio at −96 dB.
+
