@@ -42,6 +42,11 @@ The CTA is the screenshot and the caption ("I'll list the others below in the ca
 
 - **Split:** a hard horizontal cut at **y 960**. No gap, no rounded corners, no divider line. Top = b-roll at 1080×960, bottom = camera at 1080×960.
 - **Face:** centred in the lower half, hair a little under the seam (top of the head at y≈1040, eyes at y≈1180). The framing holds still: no zoom or drift on split shots.
+  - **Harnoor's note on IMG_1685 (Nov 19, 2026):** "center my face, reduce gap between the bottom section frame and space above my head".
+  - Centre the face to 0 px on every split and full-face piece, with the hair top **40–70 px under the seam** (the kit uses y 1010).
+  - Zoom is the lesser of what centring needs and what keeps hair-to-chin inside the lower half.
+  - If the chin caps the zoom before he's centred, centre him anyway. Fill the strip that opens at the frame edge with a blurred (σ≈38), ~9% darker, 1.35× copy of the same shot under the camera: lane −3 in FCP. Never mirror and never stretch.
+  - Don't leave him off-centre, and don't use a fixed zoom cap: a 1.32× cap left him 29–96 px left on 5 of 11 pieces.
 - **Top half content** always fills the full 1080×960 edge to edge. A window only gets a black or flat backdrop when it is a terminal or a small object.
 - **Full-screen graphics** (title card, proof beat, cheat sheet) take the whole 1080×1920 and the face goes away.
 - This breaks the usual "keep cards out of y 460–1060" rule on purpose: the face lives in the lower half here, so the face-safe area is y 1000–1500 instead. Keep graphics out of it on split shots.
@@ -66,6 +71,16 @@ The CTA is the screenshot and the caption ("I'll list the others below in the ca
 - **Cheat sheet** (`cheat_sheet()`): black, wide-caps title with wide tracking, a dim mono sub-line ("CHEAT SHEET // SCREENSHOT THIS"), then numbered rows that land one every ~0.12 s: wide-caps name, a dim mono note, and the command or fact in a green mono chip. A dim footer line closes it. It holds complete for at least 1.5 s.
 - **Sign-off words** (`sign_off()`): wide heavy caps, white, ~84 px, centred at chest height on the full-face shot, 1–2 words at a time, each sliding in with a motion smear over 4 frames.
 - **Wide caps font:** the reference uses an extended heavy grotesque. The kit stretches **Archivo Black** 1.3× sideways (`wide_text()`).
+- **Company logos on every chart** (Harnoor, Nov 19, 2026: "put logos of the companies I mentioned … when we have the graphs").
+  - Any company named or charted gets its **official logo, unaltered, in single-colour white**, next to its bar or label. That covers bar charts, market-cap ladders, timelines, ticker tiles and the cheat sheet.
+  - A wordmark (SpaceX, TSMC, Nvidia, AMD, AWS, Broadcom) stands in for the text name; a symbol (Apple, Meta ∞, Google G, Anthropic) sits before the name.
+  - Keep one height per chart, about 54–66 px on charts and 40 px on cheat-sheet rows.
+  - Cap very wide wordmarks by width. SpaceX is 8:1, so at chart-column width keep its text name under it as well.
+  - Sourcing:
+    - Pull the header SVG from the company's own site.
+    - meta.com and tsmc.com block downloads, so the official logo comes from Wikimedia Commons; say so in `assets/logos/SOURCES.md`.
+    - The aws.amazon.com header SVG has a lowercase `viewbox` attribute, which won't render until it's fixed to `viewBox`.
+    - nvidia.com ships its logo as a `<symbol>`, so wrap it in an `<svg>`.
 - **Colour:** white, near-black and one terminal green `#78DC82`. All other colour comes from the real screens.
 - Harnoor's standing rules still apply on top: show real sources only, keep any made card to ~6 words besides numbers and sources, and check every on-screen claim against the page.
 
@@ -133,7 +148,7 @@ Built in `videos/msft-outage/rpn/` from a 1:34 take, cut to a 60.7 s reel. It ke
 - **Post cards: always whole.** Show the **full header** (avatar, name, verified badge, @handle, date) and the **full post text**, scaled to fit, never cropped to a 2-line fragment. **Centre** the card in its area (top half or full frame) with even margins. Mark the key words. **No big view-count pill.** Keep at most the small native count inside the post ("22M views doesn't matter").
 - **No extra labels.** Don't tag drawings with "illustration (his analogy)", "recreation" and the like. Keep only what accuracy needs: the source tag on real posts and pages, and a short source line on numbers from real data (e.g. "Downdetector via Reuters"). If a drawing could pass for a real screenshot, redraw it so it's obviously drawn rather than adding a label.
 - **CTA from his own line** ("send this to a friend"), not a comment keyword.
-- **Face:** one static crop per spine clip from Apple Vision, centred in the lower half on splits, a uniform scale of about 1.25–1.35, and never mirrored.
+- **Face:** one static crop per spine clip from Apple Vision, centred to 0 px in the lower half on splits with the hair 40–70 px under the seam, a uniform scale set per piece (no fixed cap, see **Layout**), and never mirrored.
 
 ### One accent per series, and the series so far
 
@@ -157,6 +172,8 @@ Harnoor's rule: when he holds up or points at a physical object, the shot is **f
 
 - Kit functions return 1080×1920 PIL frames for a time `t`, so a build loops frames and pipes them to ffmpeg. `kit/sample.py` renders the six stills in `styles/samples/rpn/` from Harnoor's img1092 footage.
 - In FCPXML: the camera on the spine, cropped to 1080×960 around the face and moved down so it fills the lower half, the top-half screens as connected clips cropped to 1080×960 on lane 2, full-screen graphics on lane 3, captions on lane 4. Use fit plus explicit scale for 16:9 screen recordings (see the repo memory on fill conform).
+- Face boxes: sample Apple Vision about **3 times a second** per piece and take the median. At 1 a second, a 2-sample piece put a moving head 90–195 px off. On a phone selfie the hair top is about 0.5 face-box heights above the Vision box, and the chin about 0.02 below it. Measure this per clip.
+- Pause trims: when joining contiguous source ranges, only merge pieces that come from the same range. Otherwise a trimmed pause is silently put back; this happened on IMG_1684.
 - Record screens at 1080 px wide or more per half; a 16:9 recording fills the top half at 1080×960 with a ~12% side crop.
 
 ## Not measured or verified
