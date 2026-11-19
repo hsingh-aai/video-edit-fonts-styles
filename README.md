@@ -409,6 +409,15 @@ Learned on the Union Square podcast (Nov 14, 2026: 28 min, two speakers, four re
 - **Sound.** Voice at −14 LUFS, plus a light compressor on the dialogue role, because a bench recording runs 4–5 LU. SFX come from Ocular Sounds (`~/Music/Ocular_Sounds/`, searched by CSV tag), at most 6 a minute on reels and never on cuts.
 - **Delivery.** FCPXML 1.14 with every time snapped to the 1/30 s grid, one folder per reel (FCPXML, SRT, preview), validated against FCP's own DTD.
 
+## Avatar video (AI talking avatar)
+
+Learned Nov 19, 2026. The full recipe is in [.claude/skills/avatar-video/SKILL.md](.claude/skills/avatar-video/SKILL.md).
+
+- **HeyGen is the default.** Use the web app with my saved avatar and voice clone. Pick the sharpest look, with Turbo (Avatar 6) at 9:16 1080p. Pro needs the $49/mo plan. Renders come out at 1080×1920, 25 fps, with no corner watermark.
+- **New looks come from a photo.** Pull the sharpest frame from a clip (eyes open, no hands, even light) and upload it as a Photo Avatar look.
+- **Artlist is a fallback.** OmniHuman 1.5 looks good, but downloading needs a paid plan, cloning is paid only, and audio must be at least 4 s.
+- **Delivery.** `videos/<project>/renders/` and `~/Movies/FCP/<project>-graphics/`.
+
 ## Reel music folder
 
 For future video edits, check `/Users/harnoor/Music/Reel Music/` for background music and choose a track that fits the script's mood. This is the user's preferred local music library.
