@@ -148,7 +148,7 @@ Built in `videos/msft-outage/rpn/` from a 1:34 take, cut to a 60.7 s reel. It ke
 - **Post cards: always whole.** Show the **full header** (avatar, name, verified badge, @handle, date) and the **full post text**, scaled to fit, never cropped to a 2-line fragment. **Centre** the card in its area (top half or full frame) with even margins. Mark the key words. **No big view-count pill.** Keep at most the small native count inside the post ("22M views doesn't matter").
 - **No extra labels.** Don't tag drawings with "illustration (his analogy)", "recreation" and the like. Keep only what accuracy needs: the source tag on real posts and pages, and a short source line on numbers from real data (e.g. "Downdetector via Reuters"). If a drawing could pass for a real screenshot, redraw it so it's obviously drawn rather than adding a label.
 - **CTA from his own line** ("send this to a friend"), not a comment keyword.
-- **Face:** one static crop per spine clip from Apple Vision, centred in the lower half on splits, a uniform scale of about 1.25–1.35, and never mirrored.
+- **Face:** one static crop per spine clip from Apple Vision, centred to 0 px in the lower half on splits with the hair 40–70 px under the seam, a uniform scale set per piece (no fixed cap, see **Layout**), and never mirrored.
 
 ### One accent per series, and the series so far
 
