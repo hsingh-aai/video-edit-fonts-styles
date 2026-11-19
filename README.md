@@ -86,7 +86,7 @@ On Nov 9, 2026 I asked for every style to be lifted to the level of two creators
 
 ### The checklist
 
-1. **Show the real thing.** The page, app, post or document being named is on screen within a beat of the word. Drawn or generic visuals are for ideas that have no real screen.
+1. **Show the real thing.** The page, app, post or document being named is on screen within a beat of the word. Drawn or generic visuals are for ideas that have no real screen. Any company named or charted gets its official logo (unaltered, single colour) next to its bar or label (Harnoor, Nov 19, 2026).
 2. **One layout, held.** Pick the frame (split, stage, demo page) and keep it. Variety comes from what is inside it.
 3. **Voice first.** −14 LUFS on the voice alone. Loudness range ≤3 LU on shorts and ≤5 LU on long form. High-pass at 80–100 Hz. Level the voice before any music goes in.
 4. **Music is felt, not heard.** Shorts: one bed, 15–20 LU under the voice (22 LU for sponsors), one level from frame 0 to a short fade, no ducking moves. Long form: a bed in the hook (and outro if wanted) at 20–26 LU under, out before the first demo, and nothing under demos.
