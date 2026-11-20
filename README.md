@@ -416,7 +416,17 @@ Learned Nov 19, 2026. The full recipe is in [.claude/skills/avatar-video/SKILL.m
 - **HeyGen is the default.** Use the web app with my saved avatar and voice clone. Pick the sharpest look, with Turbo (Avatar 6) at 9:16 1080p. Pro needs the $49/mo plan. Renders come out at 1080×1920, 25 fps, with no corner watermark.
 - **New looks come from a photo.** Pull the sharpest frame from a clip (eyes open, no hands, even light) and upload it as a Photo Avatar look.
 - **Artlist is a fallback.** OmniHuman 1.5 looks good, but downloading needs a paid plan, cloning is paid only, and audio must be at least 4 s.
+- **ElevenLabs voice + HeyGen lip-sync.** Narrate in "Harnoor's voice" (Multilingual v2, about 0.44 credits per character, with-timestamps for word times). Upload the MP3 to the HeyGen look as Audio and render on Turbo. HeyGen adds about 0.8 s of lead-in, so measure it and shift the word times. The key needs TTS plus Voices and User read access.
 - **Delivery.** `videos/<project>/renders/` and `~/Movies/FCP/<project>-graphics/`.
+
+## Match-cut burst (image match cuts)
+
+Learned Nov 20, 2026. The full recipe and the kit are in [.claude/skills/match-cut-intro/SKILL.md](.claude/skills/match-cut-intro/SKILL.md).
+
+- **Default:** the reel opens untouched. At about 2.5 s it cuts out of the reel's own shape (his head, a laptop card) into 8 public-domain images at 4 frames each, then cuts back in on the same shape.
+- **Every shape sits on the same spot and size**, measured on the reel frame (disc to disc to head, or laptop to icon to globe to laptop).
+- **Sound:** a soft Ocular Utility tick on each cut and the Foundation whoosh "Be Gentle". The narration is unchanged.
+- **Check** the cut contact sheet (before, after and a 50% overlay), and credit every source in one chip. Images come from **Public-domain image sources** below.
 
 ## Reel music folder
 

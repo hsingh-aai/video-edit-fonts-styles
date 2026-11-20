@@ -1,0 +1,25 @@
+{
+  "mode": "burst",
+  "reel": "renders/my-reel.mp4",
+  "out": "renders/my-reel_matchcut_fast8.mp4",
+  "sheet": "renders/my-reel_matchcut-cuts.jpg",
+  "target": [522, 1170],
+  "size": 300,
+  "start_frame": 76,
+  "frames_per_image": 4,
+  "items": [
+    {"file": "assets/matchcut/coin-profile-head.jpg", "kind": "disc-light", "label": "coin with a profile head"},
+    {"file": "assets/matchcut/coin-two.jpg", "kind": "disc-light", "half": "left", "label": "second coin (obverse half)"},
+    {"file": "assets/matchcut/seal.png", "kind": "disc-alpha", "label": "agency seal"},
+    {"file": "assets/matchcut/earth-day.jpg", "kind": "disc-dark", "label": "Earth by day"},
+    {"file": "assets/matchcut/earth-night.jpg", "kind": "disc-dark", "thr": 14, "label": "Earth at night"},
+    {"file": "assets/matchcut/site-frame.png", "kind": "anchor", "anchor": [995, 702], "ref": 160, "fill": [250, 251, 253], "label": "site icon"},
+    {"file": "assets/matchcut/laptop-photo.jpg", "kind": "anchor", "anchor": [1990, 1030], "ref": 2780, "fill": [0, 0, 0], "vignette": true, "label": "laptop photo"}
+  ],
+  "credit": "Images: NASA · Smithsonian NNC (public domain)",
+  "font": "../../fonts/poppins/Poppins-SemiBold.ttf",
+  "font_bold": "../../fonts/poppins/Poppins-ExtraBold.ttf",
+  "ticks": ["/path/to/Ocular_Sounds/Utility-Ocular-Sounds/Utility - Designed/Phone or Touchscreen Typing/COMCell_TOUCH SCREEN-Typing On Cell Phone Screen Singles 01_Ocular_Utility.wav"],
+  "whoosh": "/path/to/Ocular_Sounds/Foundation-Ocular-Sounds/Whooshes/DSGNWhsh_WHOOSH-Be Gentle_Ocular_Foundation.wav",
+  "_intro_mode_instead": {"mode": "intro", "cut_frame": 76, "push": [0.78, 1.0], "label": "AI IPO", "hook": [["2,800 new", null], ["millionaires", "pill"]]}
+}
