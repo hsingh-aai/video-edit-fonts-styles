@@ -511,6 +511,21 @@ Font names were transcribed from the reel's on-screen labels on October 11, 2026
 
 The reel demonstrates white main text with yellow accent text. Some font labels show a diamond badge; check availability in your editor.
 
+## Public-domain image sources
+
+When a video needs archival photos, art, maps or space imagery, pull **public-domain** images from these 10 libraries first. Check the rights line on each item, because some collections mix public-domain and licensed work. Credit the source on screen in a small chip, e.g. "Photo: Library of Congress".
+
+1. [Wikimedia Commons](https://commons.wikimedia.org/): filter to public domain or CC0.
+2. [Europeana](https://www.europeana.eu/): filter by "Can I use this?" → free re-use.
+3. [Internet Archive](https://archive.org/): images, film and scanned books.
+4. [Library of Congress](https://www.loc.gov/free-to-use/): the "Free to Use and Reuse" sets.
+5. [Smithsonian Open Access](https://www.si.edu/openaccess): CC0 items.
+6. [Rijksmuseum](https://www.rijksmuseum.nl/en/rijksstudio): high-res public-domain art.
+7. [The Met](https://www.metmuseum.org/art/collection): filter to Open Access.
+8. [New York Public Library](https://digitalcollections.nypl.org/): filter to public domain.
+9. [NASA Image Library](https://images.nasa.gov/): generally free to use. Don't imply NASA endorses anything.
+10. [National Gallery of Art](https://www.nga.gov/open-access-images.html): open-access images.
+
 ## Font sources
 
 - [Poppins on Google Fonts](https://fonts.google.com/specimen/Poppins)
