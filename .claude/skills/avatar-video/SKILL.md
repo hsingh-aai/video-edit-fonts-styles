@@ -14,6 +14,12 @@ Learned Nov 19, 2026 on a first test: the line "Hello, I'm Harnoor." at 9:16. He
 - **Don't swap in another service without asking.**
 - **Never commit** his face photos, voice audio, avatar renders, avatar or voice IDs, or account details. They stay under `videos/<project>/`, which is never pushed.
 
+## Reel layout for avatar reels (Nov 20, 2026)
+
+- **Open on a 50/50 split.** From frame 0, put the topic's visual (a site, proof card or screenshot) on the top half and the avatar on the bottom half, with his face centred in its half. Play the hook line over this split. Never open on images alone or on a full-screen graphic.
+- **Match-cut burst at about 2 s.** After the split, put the multi-image burst on the caption boundary nearest 2.0 s. See `.claude/skills/match-cut-intro/SKILL.md`.
+- **Centre him in the avatar photo.** If the source photo has him off-centre, crop (or extend) it to 9:16 with his face horizontally centred and his head and shoulders fully in frame. Show Harnoor the still before you upload it.
+
 ## Route 1: HeyGen (default)
 
 **Access.** Use the HeyGen web app (app.heygen.com) in Claude in Chrome, where Harnoor is signed in. There's no MCP or API here. He already has a saved avatar called "Harnoor" with several looks, and a saved voice clone called "Harnoor", so most jobs need no new uploads.
