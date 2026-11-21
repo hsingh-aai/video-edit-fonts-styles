@@ -44,6 +44,8 @@ Every named style, with a frame from its reference build. Click a name for its s
 | <img src="styles/screenshots/split-stage.jpg" alt="Split Stage" width="180"> | <img src="styles/screenshots/kallaway-crop.jpg" alt="Kallaway crop" width="180"> | <img src="styles/screenshots/dark-stage.jpg" alt="Dark Stage" width="180"> | <img src="styles/screenshots/minimal-proof.jpg" alt="Minimal Proof" width="180"> |
 | **[RPN](#alternative-style-rpn)** | **[Graph Paper](#alternative-style-graph-paper-from-a-reference-reel)** **[Mariah Paper](#alternative-style-mariah-paper-from-a-reference-reel)** | **[Toybox](#alternative-style-toybox-the-cartoon-style)** (cartoonish) |
 | <img src="styles/screenshots/rpn.jpg" alt="RPN" width="180"> | <img src="styles/screenshots/graph-paper.jpg" alt="Graph Paper" width="180"> <img src="styles/screenshots/mariah-paper.jpg" alt="Mariah Paper" width="180"> | <img src="styles/screenshots/toybox.jpg" alt="Toybox" width="180"> |
+| **[Sky Blue Split](#alternative-style-sky-blue-split)** | | | |
+| <img src="styles/screenshots/sky-blue-split.jpg" alt="Sky Blue Split" width="180"> | | | |
 
 ### Long-form styles (16:9)
 
@@ -307,6 +309,20 @@ A playful "someone just built a free X" tool-share reel. I learned it on Nov 20,
 
 Full spec and kit: [.claude/skills/toybox-style/SKILL.md](.claude/skills/toybox-style/SKILL.md). Sample stills: [styles/samples/toybox/](styles/samples/toybox/).
 
+## Alternative style: Sky Blue Split
+
+<img src="styles/screenshots/sky-blue-split.jpg" alt="Sky Blue Split: live site capture on top, face below, caption on the seam" width="270">
+
+My avatar-reel look, named Nov 20, 2026. It also works on real talking-head footage.
+- **Layout:** a hard 50/50 split from frame 0, with a real visual on top and my face centred just under the seam (little space above the head).
+- **Captions:** lowercase Poppins ExtraBold on the seam.
+- **Numbers:** sky-blue pills.
+- **Top-half visuals:** live-site captures with blue marker highlights on the words I say, and drawn stat cards for numbers.
+- **Match cut:** an 8-image public-domain burst at about 2 s.
+- **Full face:** two or three full-face beats, and a full-face CTA that shows the link on screen at the end.
+
+Full spec: [.claude/skills/sky-blue-split-style/SKILL.md](.claude/skills/sky-blue-split-style/SKILL.md).
+
 ## Long form: Screen Share (default)
 
 <img src="styles/screenshots/long-screen-share.jpg" alt="Screen Share: We need to talk" width="480">
@@ -441,6 +457,7 @@ Learned Nov 20, 2026. The full recipe and the kit are in [.claude/skills/match-c
 - **Default:** the reel opens on a split, with his face plus the visuals on half the screen, for about 2 s. At about 2 s it cuts out of the reel's own shape (his head, a laptop card) into 8 public-domain images at 4 frames each, then cuts back in on the same shape.
 - **Every shape sits on the same spot and size**, measured on the reel frame (disc to disc to head, or laptop to icon to globe to laptop).
 - **Sound:** a soft Ocular Utility tick on each cut and the Foundation whoosh "Be Gentle". The narration is unchanged.
+- **Fill the frame:** when the landing shape is a whole top-half card, land at about 1000 px so the photos fill it. The Library of Congress JSON API is the quickest public-domain source.
 - **Check** the cut contact sheet (before, after and a 50% overlay), and credit every source in one chip. Images come from **Public-domain image sources** below.
 
 ## Reel music folder

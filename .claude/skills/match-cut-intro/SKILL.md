@@ -18,6 +18,7 @@ Learned Nov 19–20, 2026, on the two ElevenLabs avatar reels (Anthropic IPO and
 - **A fast burst:** 8 images at **4 frames each** (0.13 s), about 1.1 s in all. Five frames each with 4 images is the calmer version.
 - **It cuts out of the reel's own shape and back into it.** The first image echoes the shape on screen (his head becomes a coin with a profile head; the site's laptop becomes a real laptop), and the last image cuts back to the reel on that same shape.
 - **Exact size and spot.** Every image's key shape is pinned to the same landing centre and size, measured on the reel frame. Nothing drifts between cuts.
+- **Make the images fill the frame.** When the landing shape is a whole card (a site capture filling the top half), set the landing size to about the card's width (about 1000 px), not 600 px. At 600 px the photos read as a small window floating on black (IMG_1714 Tsenta reel, Nov 21).
 - **The narration is unchanged.** The burst replaces only the picture, so the burned-in captions vanish for about 1 s. That's fine.
 
 **The alternative, an opening sequence** (`mode: intro`): 3–5 images at about 0.65 s each over the first ~2.5 s, with one push-in from 78% to 100% of the landing size that runs through every cut, then a match cut into the reel's frame at that point. Put a short label plus a two-line hook (key word in the sky-blue pill) low on a soft dark band, away from the subject. Harnoor found this too slow on its own, so use it only when he asks for an opener.
@@ -37,3 +38,9 @@ Learned Nov 19–20, 2026, on the two ElevenLabs avatar reels (Anthropic IPO and
 5. **SFX.** Put a soft Ocular Utility touchscreen single (`Utility - Designed/Phone or Touchscreen Typing/...Singles 01/09/02`) at about 0.4 on each cut, and the Foundation whoosh "Be Gentle" with its peak on the cut out of the reel (burst) or into the reel (intro).
 6. **Check the contact sheet.** Each row shows the last frame before the cut, the first frame after it, and a 50% overlay with the landing point marked. In the overlay, the two shapes should sit on top of each other.
 7. **Credit and deliver.** Put one small chip listing every source ("Images: NASA · U.S. SEC · Smithsonian NNC (public domain)"). Save new files next to the old ones with a suffix such as `_matchcut_fast8`, never overwriting, copy them to `~/Movies/FCP/<project>-graphics/` with the cut sheet, and open them for Harnoor. Say whether you watched them all the way through or only checked frames.
+
+## Sourcing and FCP notes
+
+- **Library of Congress works first time.** Search `https://www.loc.gov/photos/?q=…&fo=json`, read each result's `rights_advisory` (keep "No known restrictions": FSA/OWI, Bain), and download `tile.loc.gov/.../NNNNNv.jpg` (1024 px) with a generic User-Agent. Wikimedia thumbnails rate-limit (HTTP 429); NASA's images API also works.
+- **Site captures as items.** To cut out of a site capture, use the capture itself as an `anchor` item: anchor = the crop centre on screen, `ref` = landing size × crop width ÷ 1080, with `fill` set to the page colour.
+- **FCP overlay.** If the reel also ships as an FCPXML with a graphics overlay, draw the burst into that overlay with the kit's own `prep` and `place` (and `Overlay` for the credit chip), so FCP matches the preview.
