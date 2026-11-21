@@ -423,7 +423,7 @@ Learned Nov 19, 2026. The full recipe is in [.claude/skills/avatar-video/SKILL.m
 
 Learned Nov 20, 2026. The full recipe and the kit are in [.claude/skills/match-cut-intro/SKILL.md](.claude/skills/match-cut-intro/SKILL.md).
 
-- **Default:** the reel opens untouched. At about 2.5 s it cuts out of the reel's own shape (his head, a laptop card) into 8 public-domain images at 4 frames each, then cuts back in on the same shape.
+- **Default:** the reel opens on a split, with his face plus the visuals on half the screen, for about 2 s. At about 2 s it cuts out of the reel's own shape (his head, a laptop card) into 8 public-domain images at 4 frames each, then cuts back in on the same shape.
 - **Every shape sits on the same spot and size**, measured on the reel frame (disc to disc to head, or laptop to icon to globe to laptop).
 - **Sound:** a soft Ocular Utility tick on each cut and the Foundation whoosh "Be Gentle". The narration is unchanged.
 - **Check** the cut contact sheet (before, after and a 50% overlay), and credit every source in one chip. Images come from **Public-domain image sources** below.

@@ -5,7 +5,7 @@
   "sheet": "renders/my-reel_matchcut-cuts.jpg",
   "target": [522, 1170],
   "size": 300,
-  "start_frame": 76,
+  "start_frame": 60,
   "frames_per_image": 4,
   "items": [
     {"file": "assets/matchcut/coin-profile-head.jpg", "kind": "disc-light", "label": "coin with a profile head"},
@@ -21,5 +21,5 @@
   "font_bold": "../../fonts/poppins/Poppins-ExtraBold.ttf",
   "ticks": ["/path/to/Ocular_Sounds/Utility-Ocular-Sounds/Utility - Designed/Phone or Touchscreen Typing/COMCell_TOUCH SCREEN-Typing On Cell Phone Screen Singles 01_Ocular_Utility.wav"],
   "whoosh": "/path/to/Ocular_Sounds/Foundation-Ocular-Sounds/Whooshes/DSGNWhsh_WHOOSH-Be Gentle_Ocular_Foundation.wav",
-  "_intro_mode_instead": {"mode": "intro", "cut_frame": 76, "push": [0.78, 1.0], "label": "AI IPO", "hook": [["2,800 new", null], ["millionaires", "pill"]]}
+  "_intro_mode_instead": {"mode": "intro", "cut_frame": 60, "push": [0.78, 1.0], "label": "AI IPO", "hook": [["2,800 new", null], ["millionaires", "pill"]]}
 }
