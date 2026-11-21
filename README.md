@@ -42,8 +42,8 @@ Every named style, with a frame from its reference build. Click a name for its s
 | <img src="styles/screenshots/warm-witty.jpg" alt="Warm & witty" width="180"> | <img src="styles/screenshots/editorial.jpg" alt="Editorial" width="180"> | <img src="styles/screenshots/dark-cinematic.jpg" alt="Dark cinematic" width="180"> | <img src="styles/screenshots/proof-stack.jpg" alt="Proof Stack" width="180"> |
 | **[Split Stage](#alternative-style-split-stage-nick-saraev-style-my-favourite)** (my favourite) | **[Kallaway crop](#kallaway-crop-pop-out-head)** (Split Stage framing) | **[Dark Stage](#alternative-style-dark-stage)** | **[Minimal Proof](#alternative-style-minimal-proof)** |
 | <img src="styles/screenshots/split-stage.jpg" alt="Split Stage" width="180"> | <img src="styles/screenshots/kallaway-crop.jpg" alt="Kallaway crop" width="180"> | <img src="styles/screenshots/dark-stage.jpg" alt="Dark Stage" width="180"> | <img src="styles/screenshots/minimal-proof.jpg" alt="Minimal Proof" width="180"> |
-| **[RPN](#alternative-style-rpn)** | **[Graph Paper](#alternative-style-graph-paper-from-a-reference-reel)** **[Mariah Paper](#alternative-style-mariah-paper-from-a-reference-reel)** |  |
-| <img src="styles/screenshots/rpn.jpg" alt="RPN" width="180"> | <img src="styles/screenshots/graph-paper.jpg" alt="Graph Paper" width="180"> <img src="styles/screenshots/mariah-paper.jpg" alt="Mariah Paper" width="180"> |  |
+| **[RPN](#alternative-style-rpn)** | **[Graph Paper](#alternative-style-graph-paper-from-a-reference-reel)** **[Mariah Paper](#alternative-style-mariah-paper-from-a-reference-reel)** | **[Toybox](#alternative-style-toybox-the-cartoon-style)** (cartoonish) |
+| <img src="styles/screenshots/rpn.jpg" alt="RPN" width="180"> | <img src="styles/screenshots/graph-paper.jpg" alt="Graph Paper" width="180"> <img src="styles/screenshots/mariah-paper.jpg" alt="Mariah Paper" width="180"> | <img src="styles/screenshots/toybox.jpg" alt="Toybox" width="180"> |
 
 ### Long-form styles (16:9)
 
@@ -291,6 +291,21 @@ A fast talking-head tip where the real screen backs every claim. Learned from a 
 - **Premium polish:** three layouts with one job each, real screenshots only (one drawn diagram), red as the single accent, cards hold at least 1.5 s. See [What makes it premium](#what-makes-it-premium).
 
 Full spec and kit: [.claude/skills/mariah-paper-style/SKILL.md](.claude/skills/mariah-paper-style/SKILL.md). Sample stills: [styles/samples/mariah-paper/](styles/samples/mariah-paper/).
+
+## Alternative style: Toybox (the cartoon style)
+
+<img src="styles/screenshots/toybox.jpg" alt="Toybox: blue paper title card with bubble-letter art" width="270">
+
+A playful "someone just built a free X" tool-share reel. I learned it on Nov 20, 2026 from two Instagram reels about the same free course, one in the blue-paper card style and one in the hard-split style. I took techniques only, none of either creator's footage, lines or branding. "Toybox" is my name for it. Use it when I ask for Toybox, "the cartoon style" or "the cartoonish style". It suits free tools, courses, open-source repos and sites with good visuals.
+
+- **Layout:** a hard 50/50 split from frame 0, with the product's real screen on top and my face (camera or avatar) centred below. The top changes on the exact word that names each feature. Feature beats cut to a full-screen **cobalt-blue paper** stage (`#1E6FC4`).
+- **Cards:** phone-width screenshot cards (770 px) pop in from 82% with a blur that clears, then a slow push. A three-card stack covers named examples, and a checklist card covers the feature list.
+- **Cartoon type:** captions are 1–3 lowercase words in **Gaegu Bold** (handwritten, 7 px tracking, white with a navy glow) on the seam, never on my face. Multicolour **bubble-letter word art** (Poppins Black, dot texture, navy outline) titles the hook. A white "comment KEYWORD" pill closes it.
+- **Script:** hook (who, free, what, the twist), then proof (a count, three topics, two famous examples), then "these aren't videos" plus a concrete demo, then who it's for, then a fast feature list, then the comment CTA. That's 30–35 s with no pauses. Check every feature on the live product first.
+- **Match cut:** opens on the split for about 2 s, then a public-domain burst that lands back on my head (match-cut skill).
+- **Sound:** the Ocular "Split Stage reels" bed at −9 dB, a bouncy whoosh on each blue card, a mouse click on each lesson switch and a tick on each stack card. It mixes to about −13 LUFS.
+
+Full spec and kit: [.claude/skills/toybox-style/SKILL.md](.claude/skills/toybox-style/SKILL.md). Sample stills: [styles/samples/toybox/](styles/samples/toybox/).
 
 ## Long form: Screen Share (default)
 
