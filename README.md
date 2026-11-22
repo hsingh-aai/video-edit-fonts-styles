@@ -450,6 +450,12 @@ Learned Nov 19, 2026. The full recipe is in [.claude/skills/avatar-video/SKILL.m
 - **ElevenLabs voice + HeyGen lip-sync.** Narrate in "Harnoor's voice" (Multilingual v2, about 0.44 credits per character, with-timestamps for word times). Upload the MP3 to the HeyGen look as Audio and render on Turbo. HeyGen adds about 0.8 s of lead-in, so measure it and shift the word times. The key needs TTS plus Voices and User read access.
 - **Delivery.** `videos/<project>/renders/` and `~/Movies/FCP/<project>-graphics/`.
 
+## Premium paper cards (works on any style)
+
+When the visuals feel "basic", print the proof on paper. Each real screenshot or UI sits on torn white paper with a strip of translucent tape, a slight tilt, a soft two-layer shadow and fine grain, held over the chest. A yellow highlighter swipes left to right in 0.25 s across the exact word as it's spoken, and inverts on dark-mode screenshots. Cards drop and settle or slide up, and land on Ocular paper, tape and marker sounds. Skill: `.claude/skills/premium-paper-cards/`. Kit: `kit/papercard.py`. Samples: `styles/samples/premium-paper-cards/`.
+
+![Premium paper card sample](styles/samples/premium-paper-cards/01_article_marker.jpg)
+
 ## Match-cut burst (image match cuts)
 
 Learned Nov 20, 2026. The full recipe and the kit are in [.claude/skills/match-cut-intro/SKILL.md](.claude/skills/match-cut-intro/SKILL.md).
