@@ -30,6 +30,11 @@ The kit is [`kit/papercard.py`](kit/papercard.py): `PaperCard`, `Mark`, `marker(
 
 **Dark UIs** (a navy call screen, a dark-mode results page) are printed *inside* the paper with a margin. Never make the paper itself dark.
 
+**Cropping a capture** (Harnoor flagged this on the Travelopod reel, Nov 21, 2026):
+- **Keep the identifying column.** Airline, brand or app logos and the leftmost label column are what make a screenshot read as real proof. A crop that starts just right of them looked "blocked". Crop from the row's left edge, logos included, and narrow it from the right instead if the text gets too small.
+- **Start the crop on a clean row boundary**, so no half-line of UI text (e.g. "…assistance info.") peeks in at the top edge.
+- Check every crop at native resolution before rendering. The card itself hides nothing, so a bad crop shows on every frame.
+
 ## Marker highlight
 
 - Highlighter yellow `#FFD632`. It draws **left → right in 0.25 s** (ease-out cubic), timed to the **start of the spoken word** from the word-level transcript.
