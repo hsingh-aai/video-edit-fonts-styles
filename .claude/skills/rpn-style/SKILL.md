@@ -159,6 +159,24 @@ Each RPN-pixel series gets its **own accent and seam**, so no two read as the sa
 | Microsoft 365 outage (`videos/msft-outage/rpn/`) | amber `#FFB000` | plain line | product tiles, mail queue, terminal |
 | Starship ship catch (`videos/starship-catch/`) | ice cyan `#5CE1FF` | **telemetry rail**: 2 px line with ruler ticks (tall every 5th), caption box sits on it | posts play their clip **live inside the card**; big VT323 stats with a cyan glow |
 | Jensen reels v2 (`videos/jensen-for-devs/reels/`) | lilac `#B49CFF` (Nvidia green is too close to RPN) | **circuit trace**: 2 px line with square solder pads every 108 px | night violet canvas, hard pixel shadows, same bed on all three |
+| Outages pile-up (`videos/img1684-rpn/`) | alert red `#FF4D5E` | **cross-stitch**: a row of pixel X stitches every 36 px | DOWN chips, an outage board that pops one name at a time |
+| Anthropic IPO (`videos/img1685-rpn/`) | Anthropic clay `#D97757` | **stock tape**: 2 px line with a pixel up-tick every 48 px | scrolling ticker motif, market-cap bars that climb on each number he says |
+| Jellyfish paper reels (`videos/img1709-reels/`) | diff magenta `#FF5CD6` | **diff gutter**: pixel "+" and "−" alternating every 54 px | magnified callout under every paper crop (paper text is too small at phone width) |
+| Riemann hypothesis (`videos/img1769-rpn/`) | chalk lime `#D4FF4F` | **critical line**: dots spaced like the first zeta zeros | the seam carries the subject; prime grid, 1859 → 2026 counter |
+| Nvidia CEO return (`videos/img1805-rpn/`, `img1827-rpn/`) | boot blue `#6F8CFF` | **boot bar**: progress blocks with a pixel power glyph | the `/fast` series; IMG_1827 reused it untouched when asked for "the previous Nvidia style" |
+
+- **Tie the seam to the topic** (stitches for outages, ticker for an IPO, diff marks for code review, zeta zeros for Riemann). That is what keeps each series from looking like a template.
+- **"Like the previous X video"** means keep that series' accent, seam, LUT, bed approach and SFX untouched and change only the cut, beats and assets.
+- **Fast version:** for routine talking-head reels, use the `fast-rpn` skill (`/fast` in user scope): sister-reel pipeline, burst at ~2 s, 2–4 visuals, about 12 minutes.
+
+### Source screenshots: hard cut, tight crop (IMG_1684, Nov 18)
+
+Learned from a reference reel Harnoor sent (structure only, none of its content):
+- **Entry:** cut in hard on the word that names the source. No slide, scale or fade; only the marker moves.
+- **Crop:** pages and articles are tight, flat, square-cornered crops of outlet + headline + dek + byline/date. **Tweets are never cropped** (whole post, native rounded edge).
+- **Pile-ups:** when he lists several things (outages, companies), pop one item per name.
+- **Hold:** one card per line, cut on the next named thing; key proof holds ≥1.5 s.
+- **Small text:** if the page text is unreadable at phone width (papers, filings), add a magnified callout of the exact line he reads under the crop.
 
 - **Numbers in VT323.** Pixelify's "2" reads as an "8" and its "5" as an "S", so stats and caption numbers use VT323 in the accent colour.
 - **Caption height follows the framing.** On the seam for splits, y 1352 on full-screen beats, and lower (y 1500) on full-face holds if the seam height would sit on his mouth.
