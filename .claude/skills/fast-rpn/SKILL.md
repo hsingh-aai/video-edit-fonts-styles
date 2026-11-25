@@ -13,7 +13,7 @@ This skill covers **speed and scope only**. For the look, read the repo's `rpn-s
 
 | # | Stage | Time | How |
 |---|---|---|---|
-| 1 | Set up + transcript | 0:40 | `~/.cache/fast-rpn/venv/bin/python ~/.claude/skills/fast/kit/new_reel.py <MOV> [--sister img1827-rpn]`. This copies the scripts, extracts audio, runs AssemblyAI, and prints indexed words plus a frame strip (`edit/strip.png`). |
+| 1 | Set up + transcript | 0:40 | `~/.cache/fast-rpn/venv/bin/python ~/.claude/skills/fast/kit/new_reel.py <MOV> [--sister img1843-rpn]`. This copies the scripts, extracts audio, runs AssemblyAI, and prints indexed words plus a frame strip (`edit/strip.png`). |
 | 2 | Quick fact-check, **main claim only** | 1:00 | 2–4 `WebSearch` calls in one turn. Find the primary source (company release, filing, official page) and flag the rest. Don't research deeply. |
 | 3 | Fetch assets **in parallel** | 1:00 | Run in one Bash call with `&` + `wait`: the source-page capture (headless Chrome) and the burst images (Commons API, recipe below). |
 | 4 | Look at the frame strip, plan beats | 1:45 | Object in hand = full face. Pick 2–4 visuals. Everything else is face. |
@@ -25,7 +25,9 @@ This skill covers **speed and scope only**. For the look, read the repo's `rpn-s
 
 ## What to change after copying the sister scripts (and nothing else)
 
-`new_reel.py` copies `transcribe cut layout faces kit build finish audio assets stills` from the sister reel (default `img1827-rpn`: the leanest one, no `drawn.py`, and it has the burst cover fill and the face-mode layout fix) and renames the IMG ids. Then edit:
+(6 spots: the 5 below plus `build.py` → `TITLE`, see **Opening title**.)
+
+`new_reel.py` copies `transcribe cut layout faces kit build finish audio assets stills` from the sister reel (default `img1843-rpn`: img1827's lean pipeline plus the opening-title layer, `title.mov` and the FCPXML "Title" lane) and renames the IMG ids. Then edit:
 1. **`cut.py` → `REELS`**: `(src, first_word, last_word, mode)` with modes `split` / `face` / `full`. Use `SKIP` for stumbles inside a range. Drop count-ins and retakes.
 2. **`kit.py`**: a **new accent** (unless Harnoor asks for "the previous X video style": then keep the sister's accent, seam, LUT and SFX untouched so it reads as a series, as IMG_1827 did) (used so far: amber, cyan, lilac, red, clay, magenta, lime, boot blue `#6F8CFF`), the canvas tint (`GRAPH/BOX/DOT` + the glow RGB in `floor`), and `diff_seam` (a seam motif tied to the topic, drawn in ~10 lines).
 3. **`assets.py` → `PNG`**: the page crop box + marker rects in raw capture px. To measure them, draw a 100 px grid, show the image at half size and **double the displayed coordinates**. Check by eye whether the mark lands on the right words.
@@ -34,8 +36,16 @@ This skill covers **speed and scope only**. For the look, read the repo's `rpn-s
 
 `layout.py` (face centring, hair under the seam) and `finish.py` (FCPXML) need no edits. (From img1805 or older sisters: if `finish.py` stops with "needs a blurred backdrop" on a **face** piece, the head sits high in the source; in `layout.py` face mode use `oy = min(0.0, FACE_HEAD - s * top)`.) Set `FULL_HEAD = {}` unless he's turning to the camera.
 
+## Opening title (every /fast reel, from IMG_1843, Nov 24 2026)
+- A **title of 4–5 words max** is on screen **by 2 s** at the latest (IMG_1843: from frame 0, settled by ~frame 12). It's the hook in words, built from what he says in the first seconds: pick the strongest 4–5 words.
+- Structure from Harnoor's reference (`videos/img1843-rpn/assets/title_reference.webp`): line 1 = a small official logo + one or two words; line 2 = one huge heavy word. Drawn in the series' pixel type: Pixelify Sans Bold ALL CAPS for words, VT323 in the accent for numbers / the key word. Don't copy the reference's font.
+- He can be full face or split under it. Full face: put it above his head (y ~150–470, a soft top-down dark gradient behind it) so the low captions (y 1500) never share its spot. Split: sit it on the seam at the bottom of the top half and keep the seam caption off until it's gone.
+- In `build.py` set `TITLE = dict(logo=…, l1='…', l2='…', end=B0)` (and `TITLE_Y`). It stays until the burst cuts in. Move the burst a little later (IMG_1843: 3.5 s, on the name) if the title needs the first 2 s; keep the burst inside the opening face piece.
+- **Its own layer:** `build.py` renders `title.mov` (ProRes 4444 alpha); `finish.py` puts it on **lane 3** as its own connected clip named "Title: …" with `role="Title"`, separate from the graphics runs (lane 1) and captions (lane 2), so Harnoor can disable or delete it alone in FCP. The `.mov` is also delivered on its own in the graphics folder, and the preview/MP4 bakes it in.
+- Stills: always include one at 1.0 s showing the title.
+
 ## Minimal-visuals rule
-- **Match-cut burst at ~2 s** (6–8 images × 4 frames). Put it **inside one camera piece**, so it cuts out of and back into the *same* head. If the burst straddles a face→split change, the first or last cut won't match (IMG_1805, first pass). `build.py` splits the face run around the burst automatically.
+- **Match-cut burst at ~2 s** (6–8 images × 4 frames; later, on the name, when the opening title needs the first 2 s). Put it **inside one camera piece**, so it cuts out of and back into the *same* head. If the burst straddles a face→split change, the first or last cut won't match (IMG_1805, first pass). `build.py` splits the face run around the burst automatically.
 - **2–4 key visuals:** the one page or post that proves the main claim (reuse it for a second marked line with `co=True` for the magnified callout), plus a number card where a stat lands and/or a logo card where a name lands.
 - **Everything else is full face with captions.** No custom drawn diagrams. Unverified claims get no graphic.
 
@@ -61,6 +71,7 @@ q = 'https://commons.wikimedia.org/w/api.php?' + urlencode(dict(action='query', 
 - AssemblyAI transcript (key in `~/.config/assemblyai/config.json`, never printed).
 
 ## Deliverables and checks (`~/Movies/FCP/<slug>-graphics/`)
+- `title.mov` (opening title alone, ProRes 4444 alpha; lane 3 "Title" in the FCPXML).
 - `img<N>_rpn.fcpxml` (1.14, real source in/out, 1/30 s grid; `finish.py` exits on off-grid values), validated with `xmllint --dtdvalid ~/.cache/fast-rpn/FCPXMLv1_14.dtd` (copied from `Final Cut Pro.app/Contents/Frameworks/Interchange.framework/Versions/A/Resources/`; xmllint can't read it in place because of the spaces in the path).
 - `img<N>_rpn_final.mp4` (H.264, everything baked in), `img<N>_rpn.srt`, `stills/` (3+), `img<N>_matchcut_cuts.jpg` (every overlay row: both shapes on the green ring), `img<N>_contact.jpg`.
 - Read both sheets before calling it done. Say whether you watched the reel through or only checked frames.
