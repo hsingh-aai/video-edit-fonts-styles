@@ -4,11 +4,11 @@
   - points every scratch path at ~/.cache/fast-rpn (durable venv + Apple Vision face tool live there)
   - extracts 16 kHz mono + AAC audio, runs the AssemblyAI transcript (key from ~/.config/assemblyai/config.json, never printed)
   - prints the transcript with word indices and writes a frame strip (every 2 s) to spot object-in-hand beats
-Usage: ~/.cache/fast-rpn/venv/bin/python new_reel.py ~/Downloads/IMG_1805.MOV [--sister img1827-rpn]
+Usage: ~/.cache/fast-rpn/venv/bin/python new_reel.py ~/Downloads/IMG_1805.MOV [--sister img1843-rpn]
 Run from anywhere; the repo is ~/Developer/personal edit/video-edit-fonts-styles."""
 import json, os, re, shutil, subprocess, sys
 REPO = os.path.expanduser('~/Developer/personal edit/video-edit-fonts-styles'); CACHE = os.path.expanduser('~/.cache/fast-rpn')
-src = os.path.abspath(os.path.expanduser(sys.argv[1])); sister = sys.argv[sys.argv.index('--sister') + 1] if '--sister' in sys.argv else 'img1827-rpn'
+src = os.path.abspath(os.path.expanduser(sys.argv[1])); sister = sys.argv[sys.argv.index('--sister') + 1] if '--sister' in sys.argv else 'img1843-rpn'
 num = re.search(r'IMG_(\d+)', src).group(1); slug = f'img{num}-rpn'; R = f'{REPO}/videos/{slug}'; SR = f'{REPO}/videos/{sister}'
 snum = re.search(r'img(\d+)', sister).group(1)
 for d in ('scripts', 'edit', 'audio', 'assets/logos', 'assets/burst', 'assets/dl', 'assets/cards', 'renders', 'fcp'): os.makedirs(f'{R}/{d}', exist_ok=True)
