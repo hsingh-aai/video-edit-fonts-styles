@@ -44,8 +44,8 @@ Every named style, with a frame from its reference build. Click a name for its s
 | <img src="styles/screenshots/split-stage.jpg" alt="Split Stage" width="180"> | <img src="styles/screenshots/kallaway-crop.jpg" alt="Kallaway crop" width="180"> | <img src="styles/screenshots/dark-stage.jpg" alt="Dark Stage" width="180"> | <img src="styles/screenshots/minimal-proof.jpg" alt="Minimal Proof" width="180"> |
 | **[RPN](#alternative-style-rpn)** | **[Graph Paper](#alternative-style-graph-paper-from-a-reference-reel)** **[Mariah Paper](#alternative-style-mariah-paper-from-a-reference-reel)** | **[Toybox](#alternative-style-toybox-the-cartoon-style)** (cartoonish) |
 | <img src="styles/screenshots/rpn.jpg" alt="RPN" width="180"> | <img src="styles/screenshots/graph-paper.jpg" alt="Graph Paper" width="180"> <img src="styles/screenshots/mariah-paper.jpg" alt="Mariah Paper" width="180"> | <img src="styles/screenshots/toybox.jpg" alt="Toybox" width="180"> |
-| **[Sky Blue Split](#alternative-style-sky-blue-split)** | | | |
-| <img src="styles/screenshots/sky-blue-split.jpg" alt="Sky Blue Split" width="180"> | | | |
+| **[Sky Blue Split](#alternative-style-sky-blue-split)** | **[Golden Vlog](#golden-vlog-fav-for-vlogs-and-playful)** (fav for vlogs) | | |
+| <img src="styles/screenshots/sky-blue-split.jpg" alt="Sky Blue Split" width="180"> | <img src="styles/samples/golden-vlog/2_cutouts.jpg" alt="Golden Vlog" width="180"> | | |
 
 ### Long-form styles (16:9)
 
@@ -322,6 +322,20 @@ My avatar-reel look, named Nov 20, 2026. It also works on real talking-head foot
 - **Full face:** two or three full-face beats, and a full-face CTA that shows the link on screen at the end.
 
 Full spec: [.claude/skills/sky-blue-split-style/SKILL.md](.claude/skills/sky-blue-split-style/SKILL.md).
+
+## Golden Vlog (fav for vlogs and playful)
+
+<img src="styles/samples/golden-vlog/2_cutouts.jpg" alt="Golden Vlog: real-photo dish cutouts with a white edge over the footage, small caption with a marker swipe" width="270">
+
+My favourite style for vlogs and playful reels, from the Neighborsgiving potluck reel v2 (Nov 25, 2026). The goal is that it looks like a creator made it on a phone, not a template. Use it when I ask for Golden Vlog, "vlog style", a vlog, a playful reel or "the Neighborsgiving style". Warm & witty stays the default for everything else.
+- **Footage first:** at most 3 handmade overlays per reel: a white marker arrow or circle with 1–3 handwritten words (Gaegu), real-photo cutouts lifted from my own frames with macOS Vision and given a white edge, and a phone-style text sticker for credits. No UI cards, pills, drawn icons or gradients.
+- **Captions:** small lowercase Poppins SemiBold (54 px), off centre and slightly tilted. The emphasis changes per beat: a yellow marker swipe, a big Instrument Serif italic word, or plain bold. Never over faces.
+- **Grade:** the golden-hour film LUT (gold highlights, faded blacks, +12% saturation), plus halation, grain and a vignette in the preview. Evening lights bloom more from the dusk shots on.
+- **Rhythm:** 3× speed-ups on walks and rides, at least one J-cut, b-roll on the beat, and crowd sound left up under the VO. SFX are sparse: a marker stroke, soft put-downs for cutouts, one whoosh at a section change.
+- **VO:** real on-camera lines first. Original ElevenLabs lines in my voice fill the gaps, and the script is shown to me before any credits are spent. Borrowed footage always gets a credit sticker.
+- **FCP:** assign the LUT on the GRADE layer by hand (Index → Titles → GRADE → Custom LUT), and make a ProRes copy of VP9 downloads.
+
+Full spec and kit: [.claude/skills/golden-vlog-style/SKILL.md](.claude/skills/golden-vlog-style/SKILL.md). Sample stills: [styles/samples/golden-vlog/](styles/samples/golden-vlog/).
 
 ## Long form: Screen Share (default)
 
