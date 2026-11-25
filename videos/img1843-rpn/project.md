@@ -49,3 +49,10 @@ Setup + transcript 17:23 → FCP open 17:29 (plus ~2 min reading before setup). 
 - Didn't watch the MP4 through in real time; checked the contact sheet (22 frames), the match-cut sheet and the 1.0 s still.
 - Not confirmed in the FCP UI that the "Title" role imports cleanly (DTD-valid; `role` is allowed on `<video>`).
 - The Information article itself wasn't opened (paywalled); the numbers come from the chart Harnoor attached.
+
+## Own charts in place of the screenshots (HyperFrames, Nov 24 2026)
+Harnoor: "try creating your own visuals rather than screenshots" + "blur the logos that are not talked about and slowly reveal".
+- `hf/index.html` (HyperFrames 0.8.148, 1080x960, the reel's floor + mint + Pixelify/VT323) renders `renders/hf_charts.mp4`; `build.py` reads its frames (`renders/hf_frames/`, scene A = 0-413, scene B = 414-749) for the two split runs. Rebuild: `npm run render -- -q high --crf 10 -o ../renders/hf_charts.mp4` in `hf/`, re-extract frames, then `run.sh`.
+- Scene A, bars (9.77-23.57 s): Workday $100-300 · Tesla $800 · Uber $2K · Atlassian $2K · Rippling $2K · Autodesk $2.5K · Apple $4K · Microsoft $10K. Everything sits blurred from frame 0; each named company sharpens on its word and its bar grows with a count-up. Workday and Autodesk are never named, so they stay blurred.
+- Scene B, no-limit grid (26.53-37.73 s): all 11 no-limit companies are tiles. The six he names (Anthropic, OpenAI, Snowflake, Oracle, Replit, Cognition) sharpen with a mint border on the word; AWS, Blackstone, HubSpot, Meta and Palantir stay blurred. "∞ UNLIMITED" stamps on "unlimited", then the grid steps back and NVIDIA takes the frame with "$50K, MAX A MONTH · RANGE $35-50K" on "50,000". That shows the chart's dollars, not his "tokens" (still flagged).
+- Logos: Simple Icons 13.21.0 (CC0), drawn white (`hf/assets/logos/SOURCES.md`). The Microsoft squares are CSS; Rippling, Workday, Blackstone and Cognition are text.

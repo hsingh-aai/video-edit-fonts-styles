@@ -45,6 +45,7 @@ This skill covers **speed and scope only**. For the look, read the repo's `rpn-s
 - Stills: always include one at 1.0 s showing the title.
 
 ## Minimal-visuals rule
+- **Data = your own chart, not a screenshot (Harnoor, Nov 24 2026, IMG_1843).** When the proof is a chart or list (budgets, rankings, prices), rebuild it in HyperFrames in the reel's own kit and render it as the split top (`videos/img1843-rpn/hf/`: 1080x960, floor.png from `kit.base()`, Pixelify/VT323, Simple Icons CC0 logos drawn white; `build.py` reads its frames). Every company on the chart is there from frame 0 but **blurred**; each one sharpens on the word he says it, and the ones he never names stay blurred. Keep the source credit tag. Screenshots stay for posts, articles and pages, where the real page is the proof.
 - **Match-cut burst at ~2 s** (6–8 images × 4 frames; later, on the name, when the opening title needs the first 2 s). Put it **inside one camera piece**, so it cuts out of and back into the *same* head. If the burst straddles a face→split change, the first or last cut won't match (IMG_1805, first pass). `build.py` splits the face run around the burst automatically.
 - **2–4 key visuals:** the one page or post that proves the main claim (reuse it for a second marked line with `co=True` for the magnified callout), plus a number card where a stat lands and/or a logo card where a name lands.
 - **Everything else is full face with captions.** No custom drawn diagrams. Unverified claims get no graphic.

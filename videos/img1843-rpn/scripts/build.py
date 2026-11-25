@@ -117,11 +117,18 @@ CAP_Y = {}
 INFO = 'THE INFORMATION · TOKEN BUDGET PER ENGINEER, MONTHLY'
 
 
+HF = f'{R}/renders/hf_frames'   # HyperFrames render of hf/index.html (1080x960, 30 fps): scene A = frames 0-413, scene B = 414-749
+
+
+def hf(r, off):
+    return Image.open(f'{HF}/{min(749, off + round(r * FPS)):04d}.png').convert('RGBA')
+
+
 def beats_main():
     S = runs_of('split')
     top = [
-        (pin(113), S[0][1], lambda r, a=pin(113): page('info_bars', r, marks_at=[t_(i) - a for i in (113, 117, 121, 122, 132, 136)], src=INFO, maxw=960, maxh=760)),   # Tesla .. Microsoft
-        (pin(157), S[1][1], lambda r, a=pin(157): page('info_rest', r, marks_at=[t_(i) - a for i in (160, 161, 162, 163, 164, 165, 169)], src=INFO, maxw=960, maxh=760)),  # no-limit list, then NVIDIA
+        (pin(113), S[0][1], lambda r: hf(r, 0)),     # own chart (hf/index.html scene A): bars for Tesla .. Microsoft, blurred until named
+        (pin(157), S[1][1], lambda r: hf(r, 414)),   # own chart (scene B): no-limit grid, blurred until named, then NVIDIA $50K
     ]
     SFX[:] = [('swell', pin(113)), ('tick', t_(113)), ('tick', t_(132)), ('tick', t_(136)), ('swell', pin(157)), ('tick', t_(169)), ('swell', SPEECH / FPS)]
     return top
