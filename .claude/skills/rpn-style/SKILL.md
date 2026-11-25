@@ -169,6 +169,14 @@ Each RPN-pixel series gets its **own accent and seam**, so no two read as the sa
 - **"Like the previous X video"** means keep that series' accent, seam, LUT, bed approach and SFX untouched and change only the cut, beats and assets.
 - **Fast version:** for routine talking-head reels, use the `fast-rpn` skill (`/fast` in user scope): sister-reel pipeline, burst at ~2 s, 2–4 visuals, about 12 minutes.
 
+### Opening title in the first 2 s (every RPN reel, Nov 24)
+
+Harnoor: "put a title always when reel starts within 2 seconds … title max 4 or 5 words … in a new layer on fcp so i can edit out".
+- **4–5 words max**, on screen by **2 s** (from frame 0 or the first word). It is the hook in words, taken from what he says in the first seconds.
+- **Layout:** two lines sitting on the seam at the bottom of the top half. Line 1 is small (an optional logo plus a word or two); line 2 is one huge, heavy word. He can be full screen or half screen under it. Reference structure: a "SPACEX CAUGHT / STARSHIP" split frame, drawn in the series' pixel type (ALL CAPS, accent on the key word), never copied.
+- **Its own lane in the FCPXML**, a connected clip named "Title", separate from the captions and graphics runs, so he can disable or delete it alone. Also export it as a ProRes 4444 alpha `.mov`.
+- Captions stay clear of it while it's up; if the match-cut burst would overlap the title, move the burst a little later.
+
 ### Source screenshots: hard cut, tight crop (IMG_1684, Nov 18)
 
 Learned from a reference reel Harnoor sent (structure only, none of its content):

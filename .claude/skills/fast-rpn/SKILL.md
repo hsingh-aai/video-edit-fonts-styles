@@ -70,6 +70,8 @@ q = 'https://commons.wikimedia.org/w/api.php?' + urlencode(dict(action='query', 
 - **Burst photos with a big face** (Vision box wider than ~2× his face width) get scaled down and leave an edge open. `build.py` (img1827+) puts a blurred cover copy of the photo under each frame; still prefer photos whose face is a similar size.
 - **Read time:** a chip that lands on the last word of a split piece is on screen for under 0.5 s. Land it on an earlier word ("versus", not "spirit") so it holds ≥1.5 s.
 - **Correct, don't amplify:** when a kept line is wrong (e.g. "4 affairs he confirmed" vs 1 admitted + 2 reported), prefer the take that says less, put no graphic on it, and put the sourced number on the cheat sheet.
+- **Final Cut can't use the source as-is:** FCP 13 showed a red "Missing Plug-in" slate on IMG_1827 (an H.264 MOV re-saved by QuickTime Player: audio track first, 5 `mebx` metadata tracks), and it may also lack permission to read ~/Desktop. `new_reel.py` now cuts every reel from `~/Movies/FCP/<slug>-graphics/IMG_<N>_clean.MOV`, a lossless `-c copy` remux with video + audio only (same timing, rotation kept). This fixed it.
+- `finish.py` (img1827+) leaves the bare Custom LUT effect out of the FCPXML unless `FCP_LUT=1` (removed while chasing the slate above; not proven to be a cause). The grade is baked into the MP4; in FCP add Custom LUT by hand and pick the `.cube`.
 - Never leave a bare `cat` (or anything that reads stdin) in a chained Bash command: it hangs until the timeout.
 - Reuse captures and burst photos from a sister reel on the same story instead of refetching (copy `assets/dl/*_raw.png`, `assets/burst/`).
 

@@ -12,14 +12,19 @@ src = os.path.abspath(os.path.expanduser(sys.argv[1])); sister = sys.argv[sys.ar
 num = re.search(r'IMG_(\d+)', src).group(1); slug = f'img{num}-rpn'; R = f'{REPO}/videos/{slug}'; SR = f'{REPO}/videos/{sister}'
 snum = re.search(r'img(\d+)', sister).group(1)
 for d in ('scripts', 'edit', 'audio', 'assets/logos', 'assets/burst', 'assets/dl', 'assets/cards', 'renders', 'fcp'): os.makedirs(f'{R}/{d}', exist_ok=True)
+G = os.path.expanduser(f'~/Movies/FCP/{slug}-graphics'); os.makedirs(G, exist_ok=True)
+# FCP 13 showed "Missing Plug-in" on a QuickTime-exported H.264 MOV (IMG_1827: audio track first + 5 mebx metadata tracks)
+# and may not be allowed to read ~/Desktop. So every reel cuts from a lossless remux next to the graphics: video + audio only.
+clean = f'{G}/IMG_{num}_clean.MOV'
+if not os.path.exists(clean):
+    subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-y', '-i', src, '-map', '0:v:0', '-map', '0:a:0', '-c', 'copy', '-map_metadata', '0', '-movflags', '+faststart', clean], check=True)
 for f in 'transcribe cut layout faces kit build finish audio assets stills'.split():
     s = open(f'{SR}/scripts/{f}.py').read()
     s = s.replace(f'IMG_{snum}', f'IMG_{num}').replace(f'img{snum}', f'img{num}')
     s = re.sub(r"'/private/tmp/claude-501/[^']*/scratchpad'", "os.path.expanduser('~/.cache/fast-rpn')", s)
-    s = re.sub(r"'/Users/harnoor/[^']*/IMG_%s\.MOV'" % num, lambda m: repr(src), s)   # sister's source path, wherever it lived
+    s = re.sub(r"'/Users/harnoor/[^']*/IMG_%s\.MOV'" % num, lambda m: repr(clean), s)   # sister's source path, wherever it lived
     open(f'{R}/scripts/{f}.py', 'w').write(s)
 for f in os.listdir(f'{SR}/assets/logos'): shutil.copy2(f'{SR}/assets/logos/{f}', f'{R}/assets/logos/')
-G = os.path.expanduser(f'~/Movies/FCP/{slug}-graphics'); os.makedirs(G, exist_ok=True)
 lut = [f for f in os.listdir(os.path.expanduser(f'~/Movies/FCP/{sister}-graphics')) if f.endswith('.cube')]
 if lut: shutil.copy2(os.path.expanduser(f'~/Movies/FCP/{sister}-graphics/{lut[0]}'), f'{G}/{slug}.cube')
 run = lambda *c: subprocess.run(c, check=True)
