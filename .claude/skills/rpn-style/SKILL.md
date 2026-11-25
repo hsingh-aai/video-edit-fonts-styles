@@ -177,6 +177,14 @@ Harnoor: "put a title always when reel starts within 2 seconds … title max 4 o
 - **Its own lane in the FCPXML**, a connected clip named "Title", separate from the captions and graphics runs, so he can disable or delete it alone. Also export it as a ProRes 4444 alpha `.mov`.
 - Captions stay clear of it while it's up; if the match-cut burst would overlap the title, move the burst a little later.
 
+### Layers and own-built visuals (Nov 24–25)
+
+Harnoor: "layering is important or visuals with hyperframes".
+- **Everything he might want to change is its own FCPXML lane.** Camera on the spine; each graphics run (split top / full screen) a connected clip; captions their own lane; the opening "Title" its own lane with `role="Title"`; any other text (sign-off word, chips, labels over the face) the next free lane with a clear clip name; music −1, SFX −2, blur fill −3. Every text layer is a separate alpha `.mov`, never baked into the camera or merged into a graphics run. Only text printed on a real page or post card (its source tag, marks) stays inside that card.
+- **Data = your own chart in HyperFrames, not a screenshot.** Budgets, rankings, prices, revenue: rebuild them in the reel's kit (floor, Pixelify/VT323, accent, white Simple Icons logos) as a HyperFrames project and render the split top. Reference: `videos/img1843-rpn/hf/`. Every company is on screen blurred from frame 0 and sharpens on the word he names it; the ones he never names stay blurred. Keep the source credit tag.
+- **Pages and posts stay real screenshots**: the real page is the proof. Rebuild a post card only when the screenshot is truncated ("Show more"), with the full text read from the post itself (`videos/img1858-rpn/scripts/postcard.py`).
+- **Abstract lists get real photos.** "Infrastructure, data, compute": word-cut licence-checked, credited photos (Commons etc.), one per word, over drawn icons. People he names: their face hard-cuts in on the name.
+
 ### Source screenshots: hard cut, tight crop (IMG_1684, Nov 18)
 
 Learned from a reference reel Harnoor sent (structure only, none of its content):
