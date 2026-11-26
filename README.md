@@ -347,6 +347,22 @@ My favourite style for vlogs and playful reels, from the Neighborsgiving potluck
 
 Full spec and kit: [.claude/skills/golden-vlog-style/SKILL.md](.claude/skills/golden-vlog-style/SKILL.md). Sample stills: [styles/samples/golden-vlog/](styles/samples/golden-vlog/).
 
+## Hand-drawn style (choose a category)
+
+The entry point when I ask for something hand drawn, a doodle explainer, a whiteboard or chalkboard, a Vox style or a 3Blue1Brown/manim style. It's never a default. The session shows me 2–3 categories that fit the brief and I pick one. If I don't pick, it chooses one and says which. A tool is installed only once its category is picked. Full spec, installs, licences and house rules: [.claude/skills/hand-drawn-style/SKILL.md](.claude/skills/hand-drawn-style/SKILL.md).
+
+| Option | Look | Tool |
+| --- | --- | --- |
+| <img src="styles/screenshots/hand-drawn/draw-on-doodle.jpg" alt="Draw-on doodle: watercolour wren mid-draw" width="120"><br>**1. Draw-on doodle** | An illustration draws itself mark by mark and ends on the finished still | [anidoodle](https://github.com/alexgreensh/anidoodle) (Apache-2.0) |
+| <img src="styles/screenshots/hand-drawn/chalkboard.jpg" alt="Chalkboard: phases of the moon" width="120"><br>**2. Chalkboard and blueprint** | Chalk on slate or cyanotype drafting, with labelled diagrams | anidoodle |
+| <img src="styles/screenshots/hand-drawn/whiteboard.jpg" alt="Whiteboard explainer: icons drawn cue by cue" width="68"><br>**3. Whiteboard explainer** | A pen tip draws icons and short points one cue at a time | [huashu-art-motion](https://github.com/alchaincyf/huashu-art-motion) (MIT) |
+| <img src="styles/screenshots/huashu-art-motion-9x16.jpg" alt="Painterly motion: Van Gogh scene" width="68"><br>**4. Painterly motion** | A painting that keeps moving (Van Gogh, Seurat, Matisse, ink wash) | huashu-art-motion |
+| <img src="styles/screenshots/vox-explainer.jpg" alt="Vox collage: Vox Director Tang thumbnail" width="120"><br>**5. Vox collage** | Torn paper, halftone, tape, clippings and bold flat colour | [vox-director](https://github.com/Alisa0808/vox-director) (MIT, paid API) or huashu's Vox grammar |
+| <img src="styles/screenshots/hand-drawn/math-morph.jpg" alt="Maths morph: loss curve and update equation" width="68"><br>**6. Maths and diagram morphs** | Graphs draw on, equations build, shapes morph | [3b1b/manim](https://github.com/3b1b/manim) (MIT) or huashu's 3b1b grammar |
+| <img src="styles/screenshots/hand-drawn/whole-film-lemo.jpg" alt="Whole-film look: lemo-opuscar Sketchnote poster" width="120"><br>**7. Whole-film looks** | One complete look out of 59 (sketchnote, marker paper, watercolour and more) | [lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) |
+
+Frame credits: 1–2 were rendered with anidoodle's own tool (© 2026 Alex Greenshpun, Apache-2.0). 3, 4 and 6 were rendered with huashu-art-motion's `render.py` (MIT), with English cue text; frame 6 is huashu's 3b1b-style grammar, not a manim render. 5 is a Vox Director thumbnail (MIT, © 2026 Alisa Qian). 7 is the Sketchnote poster from Lemo-Opuscar by Lemomo (LemoLab), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), converted to JPEG.
+
 ## Outside styles: Huashu Art Motion and anidoodle
 
 Two code-drawn style repos from other people, added Nov 25, 2026. Like [lemo-opuscar](#ai-film-stack-references), they are **suggested only when they fit and used only when I pick one**, never by default. Real pages, posts and products still get real captures; these are for ideas with no real screen. Each one has a short skill that says how to install it and how this repo's fonts, safe zones, captions, no-text-over-face rule, named FCPXML lanes and delivery go on top.
@@ -786,7 +802,7 @@ This is a full pipeline for code-made films, one tool per stage. Follow each lin
 | Stage | Repo | What it is | Get it |
 | --- | --- | --- | --- |
 | Story | [obra/superpowers](https://github.com/obra/superpowers) | An agentic skills framework. Its brainstorming skill locks the story, hook and beats before the build (MIT) | Claude Code plugin; see the repo |
-| Style | [lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) | 59 film styles made in code, each a style prompt plus a demo film made by Claude Opus 5.5, plus a guide for making your own style. [Gallery](https://lemomo-ai.github.io/lemo-opuscar/). Code is MIT; films and docs are CC BY 4.0 | `claude plugin marketplace add lemomo-ai/lemo-opuscar` then `claude plugin install lemo-opuscar@lemolab` |
+| Style | [lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) | 59 film styles made in code, each a style prompt plus a demo film made by Claude Opus 5.5, plus a guide for making your own style. [Gallery](https://lemomo-ai.github.io/lemo-opuscar/). Code is MIT; demo films and stills are CC BY 4.0; docs and prompts are CC BY-NC 4.0 (with extra permission for your own films) | `claude plugin marketplace add lemomo-ai/lemo-opuscar` then `claude plugin install lemo-opuscar@lemolab` |
 | Sets | [ahujasid/mcp-for-blender](https://github.com/ahujasid/mcp-for-blender) | Community MCP plugin that lets an LLM build, light and render Blender scenes and check its own frames (MIT; not affiliated with the Blender Foundation) | Blender add-on plus MCP server; see the repo |
 | Characters | [JohnHeibel/ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) | Hand-painted cartoon starter: p5.js + p5.brush, the Clawd character, 31 acted emotions and `ANIMATION_GUIDE.md` (MIT) | Clone, `npm install`, then ask Claude to read `ANIMATION_GUIDE.md` |
 | Characters / motion | [LottieFiles/motion-design-skill](https://github.com/LottieFiles/motion-design-skill) | Motion principles for agents: timing, easing, choreography and Disney's 12 principles adapted for UI (MIT) | `npx skills add LottieFiles/motion-design-skill` |
