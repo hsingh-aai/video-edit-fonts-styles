@@ -35,7 +35,7 @@ video-delivery checks.
 
 ## Style picker
 
-Every style as a 6-panel storyboard, so I can pick before an edit. Click a thumbnail for the full sheet, which has timestamps and a note per panel. Repo styles use frames from my own reference builds or the sample stills, with faces blurred. The outside styles share one sample script, "how a chip is made" (20 s), wherever the tool could render it locally. Each sheet's badge says whether it is a real render, from a reference build, or a mock. **Example videos for each style are coming next.** All sheets are in [styles/storyboards/](styles/storyboards/).
+Every style as a 6-panel storyboard, so I can pick before an edit. Click a thumbnail for the full sheet, which has timestamps and a note per panel. Repo styles use frames from my own reference builds or the sample stills. My own face is shown; bystanders and guests are blurred. The outside styles share one sample script, "how a chip is made" (20 s), wherever the tool could render it locally. Each sheet's badge says whether it is a real render, from a reference build, or a mock. **Example videos for each style are coming next.** All sheets are in [styles/storyboards/](styles/storyboards/).
 
 ### Talking-head shorts (9:16)
 
