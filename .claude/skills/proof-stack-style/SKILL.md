@@ -94,7 +94,9 @@ The b-roll scenes are opaque, full-frame and self-contained. Unlike glass cards,
 - spine: cuts
 - lane 1: Look Grade adjustment layer with the Custom LUT, `start="3600s"`
 - lane 2: b-roll scenes
-- lane 3: captions + CTA
+- lane 3: captions
+- lane 4: the opening "Title" (4–5 words by 2 s)
+- lane 5: the CTA and any other overlay text, each its own alpha clip
 - lane −1: music
 - lane −2: SFX
 

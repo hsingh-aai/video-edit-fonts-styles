@@ -1,6 +1,6 @@
 ---
 name: toybox-style
-description: Harnoor's "Toybox" short-form style, the cartoonish one, learned from two Instagram "someone just built a free course" reels (Nov 20, 2026). A hard 50/50 split, with the product's real screen on top and his face (camera or avatar) below. Captions are lowercase handwritten Gaegu Bold on the seam. Feature beats cut to a full-screen cobalt-blue paper stage, where phone-width screenshot cards pop in with a blur that clears, three cards stack, and multicolour bubble-letter word art titles the hook. It ends on a white "comment KEYWORD" pill. Use it when Harnoor asks for Toybox, "the cartoon style", "the cartoonish style" or "the blue paper style" (warm & witty stays the default).
+description: Harnoor's "Toybox" short-form style, the cartoonish one, learned from two Instagram "someone just built a free course" reels (Nov 20, 2026). A hard 50/50 split, with the product's real screen on top and his face (camera or avatar) below. Captions are lowercase handwritten Gaegu Bold on the seam. Feature beats cut to a full-screen cobalt-blue paper stage, where phone-width screenshot cards pop in with a blur that clears, three cards stack, and multicolour bubble-letter word art titles the hook. It ends on a white "comment KEYWORD" pill. Use it when Harnoor asks for Toybox, "the cartoon style", "the cartoonish style" or "the blue paper style" by name (warm & witty stays the default; a vlog or "playful reel" without the name goes to golden-vlog-style).
 ---
 
 # Toybox (the cartoon style)

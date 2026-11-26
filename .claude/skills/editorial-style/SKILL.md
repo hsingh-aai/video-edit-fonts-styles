@@ -5,7 +5,7 @@ description: Harnoor's alternative "editorial" video style, a magazine-page look
 
 # Editorial: Harnoor's premium alternative look
 
-Warm & witty stays the default. Use this look **only when Harnoor asks** for editorial, magazine or "premium, not Claude-like". It was picked from four directions (editorial, dark cinematic, Swiss tech, riso) on the IMG_0889 reel, Oct 2026. The Tsenta reel (`videos/tsenta-reel/`, sponsored) is the second build, with label-free cards.
+Warm & witty stays the default. Use this look **only when Harnoor asks** for editorial, magazine or "the premium look" as a whole style. ("Visuals look basic" means premium-paper-cards on the current style; "doesn't look like a Claude artifact" on a vlog means golden-vlog-style.) It was picked from four directions (editorial, dark cinematic, Swiss tech, riso) on the IMG_0889 reel, Oct 2026. The Tsenta reel (`videos/tsenta-reel/`, sponsored) is the second build, with label-free cards.
 
 **Core idea:** a magazine page, not a sticker sheet. The type does the work: a serif headline with an italic payoff in one accent colour. Real sources appear as framed documents. Motion is slow and quiet.
 
@@ -91,6 +91,7 @@ The FCPXML lanes are the same:
 - lane 1: Look Grade adjustment layer with the Custom LUT
 - lane 2: cards
 - lane 3: captions
+- lane 4: the opening "Title" (4–5 words by 2 s); any CTA or other text on the next free lane
 - lane −1: music
 - lane −2: SFX
 

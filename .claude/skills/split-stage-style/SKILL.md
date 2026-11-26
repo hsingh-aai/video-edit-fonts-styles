@@ -1,6 +1,6 @@
 ---
 name: split-stage-style
-description: Harnoor's alternative "Split Stage" video style, from the Nick Saraev reference reel (example videos/Nick Saraev style.mp4). A light, airy stage fills the top of the frame and the talking head sits low; real browser windows with a blue outline land in the stage with blue marker highlights and magnified callouts. Big 1–3 word captions in bold black SF Pro with the key word in blue Playfair italic, dark full-screen stat beats with a big blue-gradient number, and a full-face close with a green glowing "comment" word. Harnoor's favourite style. Use it when he asks for "my fav style", "my favorite", the Nick Saraev style or Split Stage (warm & witty stays the default).
+description: Harnoor's alternative "Split Stage" video style, from the Nick Saraev reference reel (example videos/Nick Saraev style.mp4). A light, airy stage fills the top of the frame and the talking head sits low; real browser windows with a blue outline land in the stage with blue marker highlights and magnified callouts. Big 1–3 word captions in bold black SF Pro with the key word in blue Playfair italic, dark full-screen stat beats with a big blue-gradient number, and a full-face close with a green glowing "comment" word. Harnoor's favourite style for talking-head reels (Golden Vlog is his favourite for vlogs). Use it when he asks for "my fav style", "my favorite", the Nick Saraev style or Split Stage (warm & witty stays the default).
 ---
 
 # Split Stage: the Nick Saraev look
@@ -107,7 +107,9 @@ Shared rules and the measurements behind them: [What makes it premium](../../../
 - spine: cuts. Split pieces get `<adjust-transform position="0 -32.2917"/>` (620 px down).
 - lane 1: Look Grade adjustment layer with the Custom LUT, `start="3600s"`
 - lane 2: stage clips and dark scenes
-- lane 3: captions + CTA
+- lane 3: captions
+- lane 4: the opening "Title" (4–5 words by 2 s)
+- lane 5: the CTA and any other overlay text, each its own alpha clip
 - lane −1: music
 - lane −2: SFX
 
