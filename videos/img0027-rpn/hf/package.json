@@ -1,2 +1,0 @@
-{ "name": "img0027-factory", "private": true, "type": "module",
-  "scripts": { "check": "npx --yes hyperframes@0.8.148 check", "render": "npx --yes hyperframes@0.8.148 render" } }
