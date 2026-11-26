@@ -14,6 +14,7 @@ In short:
 - Trim pauses over 0.3s.
 - Keep SFX sparse: they mark named things and section changes, never plain cuts.
 - Cut on the words, then beat-align the music bed to the cut. Epidemic Sound tracks for sponsored posts.
+- End the music naturally, never with a hard cut. Use one of the three endings in the README's **Ending background music** section: stem cut, reverb tail, or a riser + whoosh stack.
 - In FCP, the grade goes on an **adjustment layer** ("Look Grade" title plus the Custom LUT effect) on lane 1, with visuals above it.
 - Deliver an FCPXML, a LUT, an SRT and a preview.
 

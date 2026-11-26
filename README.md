@@ -597,7 +597,7 @@ For future video edits, check `/Users/harnoor/Music/Reel Music/` for background 
 - Shorts: in on frame 0 and out with a 0.8–1.5 s fade. Long form: hook and outro only, out 1–2 s before the first demo, nothing under demos.
 - Cut on the words first. Then slide the track so its drop or a bar line lands on the first graphic. Never move a cut to reach a beat.
 
-See [the reel music catalog](reels%20music/README.md) for track candidates and mood labels. Check the actual files in the music folder before selecting a track; the catalog alone does not confirm an audio file is available.
+See [the reel music catalog](reels%20music/README.md) for track candidates and mood labels. It also has **songs by content type**: Storytelling, Emotional, Educational and Day in the Life, 3 picks each. There are also five **vlog & storytelling picks**. Those are copyrighted, so they're for organic posts only (added as Instagram music at upload). Sponsored posts use Epidemic Sound. Check the actual files in the music folder before selecting a track; the catalog alone does not confirm an audio file is available.
 
 ## Sound effect vocabulary
 
@@ -641,6 +641,26 @@ Tools that help an AI agent find, place or critique real sound effects for motio
 - **[Openverse API](https://api.openverse.org/v1/)** — search openly licensed media, including audio and sound effects (`/v1/audio/`, with filters such as `category=sound_effect`). Attribution and licence come with each result.
 - **[Real SFX](https://github.com/Clipwing/skills/tree/edbefcbc3474869e6cc1e8a7ca583b0efd0dab7e/skills/real-sfx)** — a Claude Code skill (Clipwing) that places real recordings from your own library on the exact frame, keeps music and voice, and returns a new MP4 plus a separate SFX WAV.
 - **[earshot](https://github.com/Leonxlnx/earshot)** — ears for coding agents: describe, match, find, critique and forge sound locally (CLI, Python API or MCP). CPU-only, open source.
+
+## Ending background music
+
+**Goal:** end the background music so it feels natural. Never hard-cut the full track. A sudden stop reads as a mistake.
+
+Use **one** of these three techniques per ending. They're alternatives, not a sequence.
+
+| Technique | How | Needs |
+| --- | --- | --- |
+| **1. Stem cut** | At the point where the music should end, cut the **melody stem** out of the track's tail, not the whole mix. Put **reverb on the end** of what's left so the music decays and smooths out instead of stopping dead. | Stems, or a stem-separated version of the track |
+| **2. Reverb tail** | Take a **continuous beat section** from inside the track and place it at the ending point. Put a **studio reverb** on that beat segment so the track closes on a natural reverb tail. | Just the track |
+| **3. Riser + whoosh stack** | At the exact frame the music stops, layer transition SFX over the cut to mask it, **5 layers in total**: 1 × riser/transition, 2 × mid whooshes, 2 × low whooshes. Stack them under and around the end of the music, timed to the stop. | Risers and whooshes from your SFX library |
+
+**Notes:**
+- The source reel is diagram-only. It names no plugins, decay times or numeric settings, so use your judgment on reverb settings and SFX levels.
+- For technique 3, keep the stack **under the music's final level** so it masks the cut rather than dominating it.
+- Any editor or DAW works (Final Cut Pro, Premiere, After Effects, …).
+- Our starting point, which is our own default and not from the reel, is a large-hall reverb with about 2–3s of decay, 100% wet on the tail clip, and the dry signal fading out over the first beat.
+- **Never ending under the voice.** The music ending should land after the last spoken word, or in the gap right before the CTA. Never let the tail land in the middle of a sentence.
+- A plain 1.5s fade-out is the fallback when none of the three techniques fits. It's still not a hard cut.
 
 ## Favorites from @surosa.r
 
