@@ -43,8 +43,9 @@ The CTA is the screenshot and the caption ("I'll list the others below in the ca
 - **Split:** a hard horizontal cut at **y 960**. No gap, no rounded corners, no divider line. Top = b-roll at 1080×960, bottom = camera at 1080×960.
 - **Face:** centred in the lower half, hair a little under the seam (top of the head at y≈1040, eyes at y≈1180). The framing holds still: no zoom or drift on split shots.
   - **Harnoor's note on IMG_1685 (Nov 19, 2026):** "center my face, reduce gap between the bottom section frame and space above my head".
-  - Centre the face to 0 px on every split and full-face piece, with the hair top **40–70 px under the seam** (the kit uses y 1010).
-  - Zoom is the lesser of what centring needs and what keeps hair-to-chin inside the lower half.
+  - Centre the face to 0 px on every split and full-face piece, with the hair top **0–30 px under the seam** (the kit uses y 975).
+  - **Split view: never crop in tight on the face (Harnoor's fix on IMG_0027, Nov 25 2026).** The kit zoomed to fill the lower half with his head (FCP scale 1.065, hair-to-chin ≈ 80% of the half, collar cut). He set it to 0.925 / position (0.18, −37.4): head (hair top to chin) **≈ 70% of the lower half (~670 px of 960)**, hair top 0–30 px under the seam, chin around y 1630 so **~280 px of neck, collar and shoulders** show. Zoom out to that size even if it drops below cover: fill the side strips that open (~40 px each at 0.925) with the blurred, darker copy on lane −3, never by zooming back in. In `layout.py` split mode: `s = min(need, 670 / (chin - top))` with no `S_MIN_SPLIT` floor, `SEAM_HEAD = 975`, and the blur fill on whenever `fill > 0`.
+  - Zoom is the lesser of what centring needs and the ~70% head size above. Never more.
   - If the chin caps the zoom before he's centred, centre him anyway. Fill the strip that opens at the frame edge with a blurred (σ≈38), ~9% darker, 1.35× copy of the same shot under the camera: lane −3 in FCP. Never mirror and never stretch.
   - Don't leave him off-centre, and don't use a fixed zoom cap: a 1.32× cap left him 29–96 px left on 5 of 11 pieces.
 - **Top half content** always fills the full 1080×960 edge to edge. A window only gets a black or flat backdrop when it is a terminal or a small object.
