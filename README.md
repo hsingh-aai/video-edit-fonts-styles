@@ -33,6 +33,61 @@ still pending a credential with workflow permission. See
 [the release guide](docs/releases.md) for scope, verification and the remaining
 video-delivery checks.
 
+## Style picker
+
+Every style as a 6-panel storyboard, so I can pick before an edit. Click a thumbnail for the full sheet, which has timestamps and a note per panel. Repo styles use frames from my own reference builds or the sample stills, with faces blurred. The outside styles share one sample script, "how a chip is made" (20 s), wherever the tool could render it locally. Each sheet's badge says whether it is a real render, from a reference build, or a mock. **Example videos for each style are coming next.** All sheets are in [styles/storyboards/](styles/storyboards/).
+
+### Talking-head shorts (9:16)
+
+| Storyboard | Style | Say |
+| --- | --- | --- |
+| <a href="styles/storyboards/warm-witty.jpg"><img src="styles/storyboards/warm-witty.jpg" alt="Warm & witty (default) storyboard" width="150"></a> | **[Warm & witty (default)](.claude/skills/warm-witty-style/SKILL.md)**<br>Lowercase Poppins captions above the head, sky-blue key-word pill, animated UI cards in the chest band. | (default) |
+| <a href="styles/storyboards/split-stage.jpg"><img src="styles/storyboards/split-stage.jpg" alt="Split Stage, favourite storyboard" width="150"></a> | **[Split Stage, favourite](.claude/skills/split-stage-style/SKILL.md)**<br>Light stage on top with blue-outlined real pages; face low in the Kallaway card; blue Playfair italic key word. | "my fav style", Nick Saraev, Split Stage |
+| <a href="styles/storyboards/sky-blue-split.jpg"><img src="styles/storyboards/sky-blue-split.jpg" alt="Sky Blue Split storyboard" width="150"></a> | **[Sky Blue Split](.claude/skills/sky-blue-split-style/SKILL.md)**<br>Hard 50/50 split, seam captions, live-site captures with blue marker, sky-blue number pills. | Sky Blue Split, "the avatar reel look" |
+| <a href="styles/storyboards/dark-stage.jpg"><img src="styles/storyboards/dark-stage.jpg" alt="Dark Stage storyboard" width="150"></a> | **[Dark Stage](.claude/skills/dark-stage-style/SKILL.md)**<br>Split Stage's windows and stats on Proof Stack's dark floor, small white captions. | Dark Stage, "the mix", "like the Kimi reel" |
+| <a href="styles/storyboards/minimal-proof.jpg"><img src="styles/storyboards/minimal-proof.jpg" alt="Minimal Proof storyboard" width="150"></a> | **[Minimal Proof](.claude/skills/minimal-proof-style/SKILL.md)**<br>Soft black caption pill, real page crops in browser windows, paper dot-grid boards. | Minimal Proof, "minimal captions", Looki |
+| <a href="styles/storyboards/proof-stack.jpg"><img src="styles/storyboards/proof-stack.jpg" alt="Proof Stack storyboard" width="150"></a> | **[Proof Stack](.claude/skills/proof-stack-style/SKILL.md)**<br>Face opens and closes; real pages, papers and badges land and stack in a dark space. | Proof Stack, "fav style.mp4" |
+| <a href="styles/storyboards/rpn.jpg"><img src="styles/storyboards/rpn.jpg" alt="RPN and fast RPN storyboard" width="150"></a> | **[RPN and fast RPN](.claude/skills/rpn-style/SKILL.md)**<br>50/50 split, mono-caps seam captions, wide-caps titles, a 'screenshot this' cheat sheet. | RPN, "/fast <video>" |
+| <a href="styles/storyboards/editorial.jpg"><img src="styles/storyboards/editorial.jpg" alt="Editorial storyboard" width="150"></a> | **[Editorial](.claude/skills/editorial-style/SKILL.md)**<br>Magazine look: serif captions, paper cards, one oxblood accent, quiet motion. | editorial, magazine, "the premium look" |
+| <a href="styles/storyboards/dark-cinematic.jpg"><img src="styles/storyboards/dark-cinematic.jpg" alt="Dark cinematic storyboard" width="150"></a> | **[Dark cinematic](.claude/skills/dark-cinematic-style/SKILL.md)**<br>Frosted black glass cards, white Helvetica with one amber accent, light sweeps. | dark, cinematic, moody |
+| <a href="styles/storyboards/graph-paper.jpg"><img src="styles/storyboards/graph-paper.jpg" alt="Graph Paper storyboard" width="150"></a> | **[Graph Paper](.claude/skills/graph-paper-style/SKILL.md)**<br>Pale graph paper, camera card low, drawn explainer above, one brick-red accent. | Graph Paper, "the grid explainer reel" |
+| <a href="styles/storyboards/mariah-paper.jpg"><img src="styles/storyboards/mariah-paper.jpg" alt="Mariah Paper storyboard" width="150"></a> | **[Mariah Paper](.claude/skills/mariah-paper-style/SKILL.md)**<br>Full-frame face, proof cards over it, cream and red paper boards, red marker bar. | Mariah Paper, "the crumpled paper reel" |
+| <a href="styles/storyboards/toybox.jpg"><img src="styles/storyboards/toybox.jpg" alt="Toybox storyboard" width="150"></a> | **[Toybox](.claude/skills/toybox-style/SKILL.md)**<br>50/50 split, Gaegu captions, cobalt-blue paper beats, bubble-letter word art. | Toybox, "the cartoon style" |
+
+### Vlog and playful
+
+| Storyboard | Style | Say |
+| --- | --- | --- |
+| <a href="styles/storyboards/golden-vlog.jpg"><img src="styles/storyboards/golden-vlog.jpg" alt="Golden Vlog, fav for vlogs storyboard" width="150"></a> | **[Golden Vlog, fav for vlogs](.claude/skills/golden-vlog-style/SKILL.md)**<br>Footage first, at most 3 handmade overlays, golden film grade, crowd sound under the VO. | vlog, playful reel, Golden Vlog |
+
+### Hand-drawn, explainer and cartoon (outside tools, never a default)
+
+| Storyboard | Style | Say |
+| --- | --- | --- |
+| <a href="styles/storyboards/anidoodle.jpg"><img src="styles/storyboards/anidoodle.jpg" alt="Draw-on doodle (anidoodle) storyboard" width="150"></a> | **[Draw-on doodle (anidoodle)](.claude/skills/anidoodle-style/SKILL.md)**<br>Art that draws itself mark by mark; chalkboard, blueprint, watercolour and 29 more. Real render. | anidoodle, "the doodle style", chalkboard |
+| <a href="styles/storyboards/huashu-whiteboard.jpg"><img src="styles/storyboards/huashu-whiteboard.jpg" alt="Whiteboard explainer (huashu) storyboard" width="150"></a> | **[Whiteboard explainer (huashu)](.claude/skills/huashu-art-motion-style/SKILL.md)**<br>Pen draws icons and points cue by cue. Real render of the sample chip script. | whiteboard, "doodle explainer" |
+| <a href="styles/storyboards/huashu-painterly.jpg"><img src="styles/storyboards/huashu-painterly.jpg" alt="Painterly motion (huashu) storyboard" width="150"></a> | **[Painterly motion (huashu)](.claude/skills/huashu-art-motion-style/SKILL.md)**<br>Paintings that keep moving: Van Gogh, impressionism, cubism, pop, 8-bit. Real renders. | huashu, "moving paintings" |
+| <a href="styles/storyboards/vox-collage.jpg"><img src="styles/storyboards/vox-collage.jpg" alt="Vox collage (vox-director / huashu) storyboard" width="150"></a> | **[Vox collage (vox-director / huashu)](.claude/skills/hand-drawn-style/SKILL.md)**<br>Torn-paper clippings on a desk with marker highlights. Real huashu render; vox-director not run (no credits). | "Vox style", collage explainer |
+| <a href="styles/storyboards/lemo-sketchnote.jpg"><img src="styles/storyboards/lemo-sketchnote.jpg" alt="Whole-film looks (lemo-opuscar) storyboard" width="150"></a> | **[Whole-film looks (lemo-opuscar)](.claude/skills/hand-drawn-style/SKILL.md)**<br>One complete film look out of 59; shown: Sketchnote. Real render of its demo. | lemo-opuscar, a style name from its gallery |
+| <a href="styles/storyboards/animated-shorts.jpg"><img src="styles/storyboards/animated-shorts.jpg" alt="Cartoon story short (claude-animated-shorts) storyboard" width="150"></a> | **[Cartoon story short (claude-animated-shorts)](.claude/skills/animated-shorts-style/SKILL.md)**<br>2D ink characters in a colourful 3D town, gliding camera. Mock shot plan. | "animated shorts", "cartoon short" |
+
+### Long form (16:9)
+
+| Storyboard | Style | Say |
+| --- | --- | --- |
+| <a href="styles/storyboards/night-desk.jpg"><img src="styles/storyboards/night-desk.jpg" alt="Night Desk-Typecraft storyboard" width="150"></a> | **[Night Desk-Typecraft](.claude/skills/night-desk-style/SKILL.md)**<br>Dark screen, yellow-ringed corner cam, punch-ins, neon diagram boards. | Night Desk, Typecraft |
+| <a href="styles/storyboards/riley.jpg"><img src="styles/storyboards/riley.jpg" alt="Riley (Desk Notes) storyboard" width="150"></a> | **[Riley (Desk Notes)](.claude/skills/riley-style/SKILL.md)**<br>20 s desk hook, then demo pages on a dot grid with a face card and tomato bar. | Riley, "the Riley Brown style" |
+| <a href="styles/storyboards/witteveen.jpg"><img src="styles/storyboards/witteveen.jpg" alt="Midnight Board storyboard" width="150"></a> | **[Midnight Board](.claude/skills/witteveen-style/SKILL.md)**<br>Faceless board with a blue glow, real captures as cards, yellow handwritten notes. | Sam Witteveen, Midnight Board |
+
+### Add-ons (go on top of any style)
+
+| Storyboard | Style | Say |
+| --- | --- | --- |
+| <a href="styles/storyboards/match-cut.jpg"><img src="styles/storyboards/match-cut.jpg" alt="Match-cut burst storyboard" width="150"></a> | **[Match-cut burst](.claude/skills/match-cut-intro/SKILL.md)**<br>Split open, then a 4–8 image burst pinned to one shape at about 2 s. | match cut, "match intro", image burst |
+| <a href="styles/storyboards/premium-paper-cards.jpg"><img src="styles/storyboards/premium-paper-cards.jpg" alt="Premium paper cards storyboard" width="150"></a> | **[Premium paper cards](.claude/skills/premium-paper-cards/SKILL.md)**<br>Real captures on torn paper with tape, yellow marker swipe on the spoken word. | "looks basic", premium screenshots, torn paper |
+
+Credits: the outside-style sheets name their tool and licence on the sheet. anidoodle is Apache-2.0 (© 2026 Alex Greenshpun), huashu-art-motion is MIT, and the lemo-opuscar demo stills are CC BY 4.0 (Lemo-Opuscar by Lemomo (LemoLab)). The claude-animated-shorts panels are hand-drawn mocks; none of its reference frames are used.
+
 ## Style gallery
 
 Every named style, with a frame from its reference build. Click a name for its spec. All of them follow the shared checklist in [What makes it premium](#what-makes-it-premium).

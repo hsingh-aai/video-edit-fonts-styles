@@ -25,6 +25,10 @@ Seven hand-drawn or explainer looks, each built with an outside repo. **Never a 
 | 6 | **Maths and diagram morphs** | Precise vector shapes on dark ground: graphs draw on, equations build, one shape turns into the next | Numbers, formulas, graphs, algorithms, "why this works" | 3b1b/manim (ManimGL); huashu `t1_3b1b` grammar for quick clips | <img src="../../../styles/screenshots/hand-drawn/math-morph.jpg" width="68"> |
 | 7 | **Whole-film looks** | One complete film look out of 59, such as sketchnote, marker paper, ink wash or watercolour | A whole piece in one look, usually faceless or a long-form segment | lemo-opuscar | <img src="../../../styles/screenshots/hand-drawn/whole-film-lemo.jpg" width="120"> |
 
+**Cartoon story short:** a fully animated faceless story with 2D characters in a 3D town goes to [animated-shorts-style](../animated-shorts-style/SKILL.md) (mromidev/claude-animated-shorts, MIT), by name only.
+
+**Storyboards:** each category has a 6-panel sheet in `styles/storyboards/` (anidoodle, huashu-whiteboard, huashu-painterly, vox-collage, lemo-sketchnote, animated-shorts). Show the matching sheet with the options.
+
 Quick picks: an "explain this idea" short → 1, 3 or 6. A history or story short → 4 or 5. A "make the whole thing hand drawn" request → 7, then 1.
 
 ## The tools
