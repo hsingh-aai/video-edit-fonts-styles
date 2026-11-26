@@ -1,11 +1,11 @@
 ---
 name: warm-witty-style
-description: Harnoor's main video style ("warm & witty"), the default whenever he doesn't name another style. Use for ANY video graphics, edit, captions, stickers, overlays or motion work for Harnoor's shorts/reels, including sponsored ads. Covers the look, captions, motion, sound, music, grade, full-screen boards, split-screen UI visuals, and the reference toolkit in videos/travelopod/.
+description: Harnoor's main video style ("warm & witty"), the default whenever he doesn't name another style, except vlogs and playful reels, which go to golden-vlog-style. Use for ANY video graphics, edit, captions, stickers, overlays or motion work for Harnoor's shorts/reels, including sponsored ads. Covers the look, captions, motion, sound, music, grade, full-screen boards, split-screen UI visuals, and the reference toolkit in videos/travelopod/.
 ---
 
 # Warm & witty: Harnoor's main style
 
-This is the default for every new video. Only switch styles when Harnoor asks for a different one, e.g. one of the 20 animation styles in the README. The full reference build is **videos/travelopod/**: a sponsored 9:16 talking-head reel, Oct 2026.
+This is the default for every new video. Only switch styles when Harnoor asks for a different one, e.g. one of the 20 animation styles in the README. The one standing exception: vlogs and playful reels use [golden-vlog-style](../golden-vlog-style/SKILL.md). The full reference build is **videos/travelopod/**: a sponsored 9:16 talking-head reel, Oct 2026.
 
 **Core idea:** visual, not text-heavy. Show results as objects (stickers, drawings, UI) instead of sentences. **Default to an animated generic UI card that acts out the line** (a fare that counts up, an itinerary whose layover stretches, a calendar where the flight drags earlier, an incoming call, a 2 AM lock screen, a comment box typing the keyword). Use a word pill only when no UI can show the idea. **No sticky notes or handwritten text asides.** Harnoor's dry aside becomes a **visual aside**: a small drawn object, icon or mini illustration with a label of 3 words at most (see signature move 2). Harnoor is the builder who tries things, with dry asides told in pictures and a recurring verdict sticker.
 
@@ -132,6 +132,7 @@ Shared rules and the measurements behind them: [What makes it premium](../../../
    - grade adjustment layer on lane 1
    - stickers and UI visuals on lane 2
    - captions on lane 3
+   - the opening "Title" (4–5 words by 2 s) on lane 4, and any CTA or other text on the next free lane, each its own alpha clip
    - music on lane −1
    - SFX on lane −2
 

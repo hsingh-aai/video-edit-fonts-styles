@@ -38,7 +38,7 @@ Screenshot: [styles/screenshots/minimal-proof.jpg](../../../styles/screenshots/m
 - **Grade:** `kit/minimal_proof_warm.cube` (installed in FCP as "Look1 ASMR warm") on the **Look Grade adjustment layer**, lane 1. It's a light warm LUT: R ×1.012, B ×0.975, gentle S-curve, +5% saturation. Cards and captions sit above it.
 - **Music:** one bed from `~/Music/documentary es/` (Epidemic Sound), e.g. "Problem Solver" (Auxjack) or "What Comes Next" (Cobby Costa).
   - Find the drop with librosa (the largest ~2 s RMS jump, snapped to a beat) and align it to the first card hit.
-  - Bake the bed to **−33 LUFS** (~19 LU under a −14 LUFS voice) with a 0.25 s fade-in and 1.6 s fade-out, on lane −1, role music.
+  - Bake the bed to **−33 LUFS** (~19 LU under a −14 LUFS voice; −36 LUFS, 22 LU under, for sponsored posts) with a 0.25 s fade-in and 1.6 s fade-out, on lane −1, role music.
 - **SFX:** sparse, one per card entrance, all **CC0 from Openverse** (`api.openverse.org/v1/audio/?q=…&license=cc0`). Keep `credits.json` beside them.
   - whoosh → board; click → browser window; pop → chip/post; second pop → CTA; cash register → a money line.
   - Normalise to −3 dBFS peak, then use clip gains of −9 to −16 dB on lane −2, role effects.
@@ -69,7 +69,7 @@ Shared rules and the measurements behind them: [What makes it premium](../../../
 - Keep the face on opinions and CTA; use proof cards on named things (page, company, post, document).
 
 ## FCP and deliverables
-- **FCPXML 1.14**, validated with xmllint against the FCP DTD. The spine is the original camera clips with clip gain to ~−14 LUFS. Lane 1 is the grade layer (`start="3600s"`), lane 2 the cards and boards (one alpha MOV each), lane 3 the captions MOV, lane −1 the music and lane −2 the SFX.
+- **FCPXML 1.14**, validated with xmllint against the FCP DTD. The spine is the original camera clips with clip gain to ~−14 LUFS. Lane 1 is the grade layer (`start="3600s"`), lane 2 the cards and boards (one alpha MOV each), lane 3 the captions MOV, lane 4 the opening "Title" (4–5 words by 2 s, in the caption pill type), the CTA pill on the next free lane, lane −1 the music and lane −2 the SFX.
 - When Harnoor has edited the project in FCP, start from his exported `.fcpxmld/Info.fcpxml` and keep it verbatim. Only add new assets and lanes, and rename the project. Re-rendered media gets new filenames.
 - **Deliver:** an FCPXML, an SRT, a preview MP4 (rendered from the final FCPXML) and the graphics to `~/Movies/FCP/<name>-graphics/`.
 - Reference builds (local, not committed): `videos/anthropic-residency-reels/scripts/build.py` (v1) and `scripts/v2.py` (music + SFX + building on Harnoor's FCP edit).

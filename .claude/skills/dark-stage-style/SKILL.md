@@ -61,7 +61,9 @@ Load both parent skills for the details of each piece: [split-stage-style](../sp
 - spine: cuts. Split clips get `<adjust-transform position="0 -32.2917"/>`.
 - lane 1: Look Grade adjustment layer with the Custom LUT, `start="3600s"`
 - lane 2: split and dark run clips
-- lane 3: captions + CTA
+- lane 3: captions
+- lane 4: the opening "Title" (4–5 words by 2 s)
+- lane 5: the CTA and any other overlay text, each its own alpha clip
 - lane −1: music
 - lane −2: SFX
 

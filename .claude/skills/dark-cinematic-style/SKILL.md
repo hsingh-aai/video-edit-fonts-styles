@@ -97,6 +97,7 @@ The FCPXML lanes are the same:
 - lane 1: Look Grade adjustment layer with the Custom LUT
 - lane 2: cards
 - lane 3: captions
+- lane 4: the opening "Title" (4–5 words by 2 s); any CTA or other text on the next free lane
 - lane −1: music
 - lane −2: SFX
 

@@ -17,6 +17,7 @@ Start from the closest of these scripts. Don't redesign.
 - **Head close to the seam.** Crop the camera so the top of his hair sits about 40–80 px under the seam, not 250+ px down. Harnoor asked for "less space between the head and above" (Nov 21). On an iPhone 9:16 take that's a source crop starting around row 600–650.
 - **Captions on the seam** (centre y 960): lowercase Poppins ExtraBold, 74 px, white with a 7 px black stroke and a soft shadow, 1–3 words (16 characters at most). They pop from 86% to 100% over 0.12 s. There's no text on his face, ever.
 - **Switch to full face a few times.** Two or three short punchy lines go full frame, for example "here are the results", "but there is a silver lining" or "so agents do help". Put the caption in the top band (y ≈ 300) above his head. Harnoor: "switch full screen back and forth, very few times". More than three starts to look like a different style.
+- **Opening title by 2 s:** 4–5 words of the hook in the caption type, at the bottom of the top half just above the seam caption, gone when the burst cuts in (move the burst a little later if the title needs the first 2 s). It goes on its own "Title" lane.
 - **Full-face CTA** at the end, with the caption above his head, a sky-blue "comment WORD" pill at y ≈ 140, and the offer pill ("25% off") when he says it.
 - **Show the link at the end.** When he mentions a link, put it on screen as a white pill with dark text on the chest band (y ≈ 1660), from the word "link" to the end (for example `singhinusa.link/Tsenta`). Harnoor asked for this (Nov 21).
 
@@ -62,7 +63,8 @@ Shared rules and the measurements behind them: [What makes it premium](../../../
   - On split pieces, move the camera down by `960 − crop_row` px: `adjust-transform position="0 -(960-crop_row)/19.2"`.
   - Full-face and CTA pieces get no transform.
   - Full-face beats must start and end on piece boundaries, so force cuts there.
-- **Lane 1:** one ProRes 4444 alpha overlay that is opaque over the top half on split shots. It holds the captions, chips, burst and CTA pills. Because it covers the top half, no crop is needed.
+- **Lane 1:** the top-half visuals and the burst as ProRes 4444 alpha runs, opaque over the top half on split shots, so no crop is needed.
+- **Their own lanes above it** (CLAUDE.md "Layer everything"): captions, the opening "Title", then the chips and the CTA and link pills, each a separate alpha clip with a clear name. The reference builds baked these into the one overlay; split them on new builds.
 - **Lane −1:** the match-cut SFX stem.
 
 ## Deliver

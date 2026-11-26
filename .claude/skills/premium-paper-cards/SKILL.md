@@ -1,6 +1,6 @@
 ---
 name: premium-paper-cards
-description: Premium screenshot and UI cards for any of Harnoor's styles. A real capture or UI is printed on torn white paper with tape, a tilt, a soft shadow and grain, and a yellow highlighter swipes across the exact words as he says them, with Ocular paper, tape, marker and whoosh SFX. Use whenever Harnoor says the visuals look "basic", asks for "premium" visuals or screenshots, torn paper or paper cards, or wants screenshots to "look cool". It layers on top of the current style (warm & witty by default) and doesn't replace it. When he asks for "the premium look" as a whole style, that's editorial-style.
+description: Premium screenshot and UI cards for any of Harnoor's styles. A real capture or UI is printed on torn white paper with tape, a tilt, a soft shadow and grain, and a yellow highlighter swipes across the exact words as he says them, with Ocular paper, tape, marker and whoosh SFX. Use whenever Harnoor says the visuals look "basic", asks for "premium" visuals or screenshots, torn paper or paper cards, or wants screenshots to "look cool". It layers on top of the current style (warm & witty by default) and doesn't replace it. When he asks for "the premium look" as a whole style, that's editorial-style. Not for golden-vlog-style, whose overlays are its own.
 ---
 
 # Premium paper cards
@@ -69,6 +69,8 @@ Beat-align the music bed to the landings only, not to markers, tape or whooshes.
 - Cards sit in the **chest band** (centre y ≈ 1470–1600 at 1080×1920) or the top band. They never enter the face zone (y 460–1060).
 - Big cards are 820–960 px wide. Tags are 240–520 px and sit above a card's top corners.
 - Captions stay where the base style puts them (warm & witty: above the head).
+- The top band is only for a card when the base style's captions aren't there (e.g. on a split).
+- Not on Golden Vlog: its footage-first, handmade overlays are the point, and paper cards read as the template look it avoids.
 - End card: one paper card holding the official logo, the URL, the offer line and the phone number, each swiped as it is said. The comment-keyword strip sits just above it.
 
 ## Build

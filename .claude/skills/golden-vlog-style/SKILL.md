@@ -28,6 +28,11 @@ Use only these three kinds, and only where they add information. Never use UI ca
    - A plain IG "Classic" box: a white rounded box with Helvetica Neue Bold at 46 px, left aligned. It fades in and doesn't bounce.
    - Use it for credits ("drone: @handle") and the odd one-line aside.
 
+## Opening title (CLAUDE.md rule)
+
+- 4–5 words, on screen by 2 s, the hook in words. Set it in the caption type (Poppins SemiBold, lowercase, about 72 px) with the same soft shadow and a small tilt, above the head, so it reads as part of the footage rather than a title card.
+- It sits on its own FCPXML lane named "Title" (plus an alpha `.mov`) and doesn't count toward the 3 overlays.
+
 ## Captions (`caption()`)
 
 - Lowercase, 1–3 word chunks, **Poppins SemiBold at 54 px**, white with a soft shadow and no thick outline.
@@ -57,11 +62,24 @@ Use only these three kinds, and only where they add information. Never use UI ca
 - **J-cut.** At least one: the next shot's line starts under the current shot (e.g. "wow, there's a…" under a laughing selfie, cut to the sky on "rainbow"). In FCP the lead audio is a connected audio clip below the spine.
 - **Cuts.** Cut b-roll on the beat grid, and sync bites on their words. Trim pauses over 0.3 s inside lines.
 - **Sound.**
-  - Crowd and ambient sound stays up under the VO (b-roll at about −31 dB RMS).
-  - The music bed sits at about −25 dB, beat-aligned.
+  - Crowd and ambient sound stays up under the VO (b-roll at about −31 dB RMS on v2), always quieter than the bed's busiest moments so the VO stays clear. This is the one style where location sound runs under the voice on purpose.
+  - The music bed is one track at one level, **15–20 LU under the voice, measured** (the shared shorts rule; 22 LU and Epidemic Sound for sponsors), slid so a bar line lands on the first overlay. Neighborsgiving v2 set it with a gain of about −25 dB; measure LU instead of copying the gain.
   - SFX are sparse: a marker stroke for the arrow, a soft "put down" per cutout, and one whoosh only where a section changes (into dusk).
   - Use Ocular Sounds: Utility Writing/Marker, Objects on Desk Foley, Foundation Whooshes "Be Gentle".
 - **Mix** to −14 LUFS, true peak about −1.5 dBTP.
+
+## Premium polish
+
+The shared rules in [What makes it premium](../../../README.md#what-makes-it-premium) apply, read for footage:
+
+- **The real thing is the footage.** Overlays point at it (arrow, circle) or lift from it (cutouts); nothing is drawn that the camera didn't see.
+- **Type, three sizes:** captions 54 px, the serif emphasis word 80 px, marker labels 92 px Gaegu. The phone sticker (46 px) is the platform's own look, not a fourth size.
+- **Motion:** marker strokes draw in 0.45 s, cutouts settle within 10 frames and then only sway, stickers fade without bouncing. One overlay moves at a time.
+- **Holds:** an overlay with words stays 1.5 s after it finishes drawing.
+- **One accent:** the marker yellow `#FFD65C`. White is the marker and sticker colour, not an accent.
+- **Grade:** the golden film LUT is the look, so it covers the footage; overlays and captions sit above it ungraded.
+- **End frame:** a real moment that reads as a still (the long table at dusk, everyone mid-laugh) with the last caption, not a card.
+- **Avoid the template tells** Harnoor flagged on v1: centred stacks, identical caption emphasis twice in a row, perfectly straight type, drawn icons and UI cards.
 
 ## VO workflow
 
@@ -82,7 +100,7 @@ Use only these three kinds, and only where they add information. Never use UI ca
 - A preview MP4 at 1080×1920, 30 fps, −14 LUFS, with the film finish baked in.
 - An FCPXML linked to the original clips and DTD-validated:
   - Lane 1: the "Look Grade" adjustment layer plus Custom LUT.
-  - Above it: overlays as ProRes 4444 alpha, then captions.
+  - Above it, each on its own named lane: every overlay as its own ProRes 4444 alpha clip, then captions, then the "Title".
   - Audio lanes: music, VO, SFX and the J-cut lead.
 - The LUT, an SRT, a few frame grabs and a `project.md`. Copy everything to `~/Movies/FCP/<name>-graphics/`.
 
@@ -98,4 +116,5 @@ Use only these three kinds, and only where they add information. Never use UI ca
 - `kit/lift.swift`: Vision subject lift for the cutouts.
 - `kit/golden_film.cube`: the grade.
 - `kit/sample.py`: renders a demo still from a drawn stand-in scene (`python sample.py out.jpg`).
-- Sample stills are in `styles/samples/golden-vlog/`.
+- Sample stills are in `styles/samples/golden-vlog/`; the gallery frame is `styles/screenshots/golden-vlog.jpg`.
+- `premium-paper-cards` doesn't layer onto this style: paper cards are the template look it avoids. Proof in a vlog is a cutout or a phone sticker.

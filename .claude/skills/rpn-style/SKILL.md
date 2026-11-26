@@ -107,7 +107,7 @@ The CTA is the screenshot and the caption ("I'll list the others below in the ca
 | SFX level | Ticks sit 6–10 dB under the voice. Swells sit at about voice level. |
 
 - **Voice:** fast and levelled, −14 LUFS with a ~2 LU range, high-pass at 80–100 Hz. Trim pauses over 0.3 s.
-- **Music:** one dark, low bed with little above 2 kHz and no strong beat (an ambient pad or a sub-heavy minimal track). In on frame 0, out with a 0.8 s fade, **15 LU under the voice** (about −29 LUFS), one level throughout. Sponsored posts: Epidemic Sound only, 19 LU under; audition `~/Music/new ES/` and `~/Music/documentary es/` and check the file exists. No beat alignment is needed here: cut on the words.
+- **Music:** one dark, low bed with little above 2 kHz and no strong beat (an ambient pad or a sub-heavy minimal track). In on frame 0, out with a 0.8 s fade, **15 LU under the voice** (about −29 LUFS), one level throughout. Sponsored posts: Epidemic Sound only, 22 LU under (the shared sponsor rule); audition `~/Music/new ES/` and `~/Music/documentary es/` and check the file exists. No beat alignment is needed here: cut on the words.
 - **SFX palette (4 sounds):** tick (a named icon, label or terminal result appears), key click (under the terminal typing, one every 3–4 characters, very low), soft swell or whoosh (a section change or a title card), camera shutter (on "take a screenshot"; `~/Music/SFX sting/` has shutters. The reference has a sound there, the kind is a guess).
   - Ticks only on things that are named, never on a plain top-half cut. **No more than 16 ticks and 4 swells a minute** (the reference ran 22 in total; this keeps Harnoor's sparse rule).
   - Levels: ticks peak at −14 to −16 dBFS, swells at −8 to −10 dBFS.
@@ -167,7 +167,7 @@ Each RPN-pixel series gets its **own accent and seam**, so no two read as the sa
 
 - **Tie the seam to the topic** (stitches for outages, ticker for an IPO, diff marks for code review, zeta zeros for Riemann). That is what keeps each series from looking like a template.
 - **"Like the previous X video"** means keep that series' accent, seam, LUT, bed approach and SFX untouched and change only the cut, beats and assets.
-- **Fast version:** for routine talking-head reels, use the `fast-rpn` skill (`/fast` in user scope): sister-reel pipeline, burst at ~2 s, 2–4 visuals, about 12 minutes.
+- **Fast version:** for routine talking-head reels, use the repo's `fast-rpn` skill (typed as `/fast`): sister-reel pipeline, burst at ~2 s, 2–4 visuals, about 12 minutes.
 
 ### Opening title in the first 2 s (every RPN reel, Nov 24)
 
@@ -205,7 +205,7 @@ Harnoor's rule: when he holds up or points at a physical object, the shot is **f
 ## Build notes
 
 - Kit functions return 1080×1920 PIL frames for a time `t`, so a build loops frames and pipes them to ffmpeg. `kit/sample.py` renders the six stills in `styles/samples/rpn/` from Harnoor's img1092 footage.
-- In FCPXML: the camera on the spine, cropped to 1080×960 around the face and moved down so it fills the lower half, the top-half screens as connected clips cropped to 1080×960 on lane 2, full-screen graphics on lane 3, captions on lane 4. Use fit plus explicit scale for 16:9 screen recordings (see the repo memory on fill conform).
+- In FCPXML: the camera on the spine, cropped to 1080×960 around the face and moved down so it fills the lower half; the top-half screens cropped to 1080×960 and the full-screen graphics as connected clips; captions, the "Title" and any other text each on their own lane (see **Layers and own-built visuals**). Exact lane numbers follow the sister reel's `finish.py` (img1843+: graphics 1, captions 2, Title 3, grade baked into the preview). Use fit plus explicit scale for 16:9 screen recordings (see the repo memory on fill conform).
 - Face boxes: sample Apple Vision about **3 times a second** per piece and take the median. At 1 a second, a 2-sample piece put a moving head 90–195 px off. On a phone selfie the hair top is about 0.5 face-box heights above the Vision box, and the chin about 0.02 below it. Measure this per clip.
 - Pause trims: when joining contiguous source ranges, only merge pieces that come from the same range. Otherwise a trimmed pause is silently put back; this happened on IMG_1684.
 - Record screens at 1080 px wide or more per half; a 16:9 recording fills the top half at 1080×960 with a ~12% side crop.
