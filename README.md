@@ -44,8 +44,8 @@ Every named style, with a frame from its reference build. Click a name for its s
 | <img src="styles/screenshots/split-stage.jpg" alt="Split Stage" width="180"> | <img src="styles/screenshots/kallaway-crop.jpg" alt="Kallaway crop" width="180"> | <img src="styles/screenshots/dark-stage.jpg" alt="Dark Stage" width="180"> | <img src="styles/screenshots/minimal-proof.jpg" alt="Minimal Proof" width="180"> |
 | **[RPN](#alternative-style-rpn)** | **[Graph Paper](#alternative-style-graph-paper-from-a-reference-reel)** **[Mariah Paper](#alternative-style-mariah-paper-from-a-reference-reel)** | **[Toybox](#alternative-style-toybox-the-cartoon-style)** (cartoonish) |
 | <img src="styles/screenshots/rpn.jpg" alt="RPN" width="180"> | <img src="styles/screenshots/graph-paper.jpg" alt="Graph Paper" width="180"> <img src="styles/screenshots/mariah-paper.jpg" alt="Mariah Paper" width="180"> | <img src="styles/screenshots/toybox.jpg" alt="Toybox" width="180"> |
-| **[Sky Blue Split](#alternative-style-sky-blue-split)** | **[Golden Vlog](#golden-vlog-fav-for-vlogs-and-playful)** (fav for vlogs) | | |
-| <img src="styles/screenshots/sky-blue-split.jpg" alt="Sky Blue Split" width="180"> | <img src="styles/screenshots/golden-vlog.jpg" alt="Golden Vlog" width="180"> | | |
+| **[Sky Blue Split](#alternative-style-sky-blue-split)** | **[Golden Vlog](#golden-vlog-fav-for-vlogs-and-playful)** (fav for vlogs) | **[Huashu Art Motion](#outside-styles-huashu-art-motion-and-anidoodle)** (outside, by name) | **[anidoodle](#outside-styles-huashu-art-motion-and-anidoodle)** (outside, by name) |
+| <img src="styles/screenshots/sky-blue-split.jpg" alt="Sky Blue Split" width="180"> | <img src="styles/screenshots/golden-vlog.jpg" alt="Golden Vlog" width="180"> | <img src="styles/screenshots/huashu-art-motion-9x16.jpg" alt="Huashu Art Motion: Van Gogh scene at 9:16" width="180"> | <img src="styles/screenshots/anidoodle.jpg" alt="anidoodle: 32-style contact sheet" width="180"> |
 
 ### Long-form styles (16:9)
 
@@ -346,6 +346,19 @@ My favourite style for vlogs and playful reels, from the Neighborsgiving potluck
 - **FCP:** assign the LUT on the GRADE layer by hand (Index → Titles → GRADE → Custom LUT), and make a ProRes copy of VP9 downloads.
 
 Full spec and kit: [.claude/skills/golden-vlog-style/SKILL.md](.claude/skills/golden-vlog-style/SKILL.md). Sample stills: [styles/samples/golden-vlog/](styles/samples/golden-vlog/).
+
+## Outside styles: Huashu Art Motion and anidoodle
+
+Two code-drawn style repos from other people, added Nov 25, 2026. Like [lemo-opuscar](#ai-film-stack-references), they are **suggested only when they fit and used only when I pick one**, never by default. Real pages, posts and products still get real captures; these are for ideas with no real screen. Each one has a short skill that says how to install it and how this repo's fonts, safe zones, captions, no-text-over-face rule, named FCPXML lanes and delivery go on top.
+
+| Style | What it looks like | Licence | Skill |
+| --- | --- | --- | --- |
+| **[Huashu Art Motion](https://github.com/alchaincyf/huashu-art-motion)** by 花叔 / Huashu | Paintings that keep moving: Van Gogh flow-field strokes, Seurat dots, Matisse cut paper, ink wash, pop art, 8-bit, vaporwave and more, plus explainer grammars (whiteboard, Vox collage, kinetic type, finance charts) rendered from a JSON cue list, with ProRes 4444 alpha | MIT. Not covered: Huashu's own likeness, the Clawd demo and the bundled fonts. Skip the franchise look-alike recipes (Ghibli, Pixar, Rick & Morty, South Park, the Mario level) | [huashu-art-motion-style](.claude/skills/huashu-art-motion-style/SKILL.md) |
+| **[anidoodle](https://github.com/alexgreensh/anidoodle)** by Alex Greenshpun | Hand-drawn art that draws itself, mark by mark, in 32 styles (pencil and watercolour, chalkboard, cyanotype blueprint, risograph, woodcut, sumi-e, pixel art, toy brick and more), as stills, films and alpha stickers in 9:16 or 16:9 | Apache-2.0. Keep its LICENSE and NOTICE if its files are redistributed. The optional sound pack's rooms are CC BY 4.0 (credit OpenAIR) | [anidoodle-style](.claude/skills/anidoodle-style/SKILL.md) |
+
+<img src="styles/screenshots/huashu-art-motion-9x16.jpg" alt="Huashu Art Motion: Van Gogh scene rendered at 1080x1920" width="180"> <img src="styles/screenshots/anidoodle.jpg" alt="anidoodle: 32-style contact sheet from the repo" width="480">
+
+Frames: the Huashu still is its Van Gogh scene (`09_postimp`), rendered at 1080×1920 with the repo's own `render.py`. The anidoodle sheet is the repo's own `assets/styles.jpg`, scaled down (© 2026 Alex Greenshpun, Apache-2.0).
 
 ## Long form: Screen Share (default)
 
@@ -689,6 +702,17 @@ Confirmed agent skills for motion graphics and code-drawn stills. Frames below a
 
   ```bash
   npx skills add alchaincyf/huashu-art-motion
+  ```
+
+  House rules for using it: [huashu-art-motion-style](.claude/skills/huashu-art-motion-style/SKILL.md).
+
+- **[anidoodle](https://github.com/alexgreensh/anidoodle)** by Alex Greenshpun (Apache-2.0) — hand-drawn art written as code: 32 styles, and every picture draws itself mark by mark, ending on the exact still. Stills, films, alpha WebM/APNG stickers, launch films in 9:16 or 16:9, a HyperFrames backend and an optional score. Needs Node 20+, Playwright Chromium and ffmpeg. House rules: [anidoodle-style](.claude/skills/anidoodle-style/SKILL.md).
+
+  <img src="styles/screenshots/anidoodle.jpg" alt="anidoodle: the repo's 32-style contact sheet" width="270">
+
+  ```text
+  /plugin marketplace add alexgreensh/anidoodle
+  /plugin install anidoodle@alexgreensh-anidoodle
   ```
 
 - **[Claude Drawing Skill](https://github.com/cloveric/claude-drawing-skill)** by cloveric (MIT) — Claude paints with code: **eighty styles per the repo** (an earlier note said 77). No image model — numpy + Pillow only — and it exports draw-on GIFs (plus stills). Clone into Claude skills and `pip install -r requirements.txt`.
