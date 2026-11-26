@@ -7,6 +7,7 @@ Everything is a pure function of t, so any frame renders on its own. Frames are 
     cutout_sticker(Image.open('dish_cut.png'), 360)        # real-photo cutout with a white edge (lift.swift makes the cut)
     cutouts_layer([(img, width, cx, cy, tilt, t0), ...], t, dur)
     caption(words, key_index, chunk_index, u)              # -> (RGBA strip, centre y)
+    title_card('biggest potluck', 'in', 'SF', t)            # opening title frame, <=4 words, on its own "Title" lane
     make_lut('golden_film.cube')                           # the grade as a 33^3 .cube
     film_finish(lut_path, dusk_t=None)                     # ffmpeg filter: LUT + halation + grain + vignette
 
@@ -189,6 +190,34 @@ def caption(words, key, idx, u, y=215):
     img = soft_shadow(img, 5, 2, 120).rotate(rnd.uniform(-2.2, 2.2), resample=Image.BICUBIC)
     a = min(1, u * 2)
     return with_alpha(img, a), y + rnd.randint(-14, 14)
+
+
+# ---------------- opening title ----------------
+def title_card(line1, small, punch, t, dur=3.0, cy=1350, tilt=-3):
+    """Opening title frame (full 1080x1920 RGBA): line1 in ExtraBold, then a serif-italic `small` word and the
+    `punch` word on a yellow marker swipe. Keep it to 4 words in all and off the face (cy=1350 = chest band on a selfie)."""
+    fr = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+    if t >= dur: return fr
+    f1, fi, fs = font(POP_XB, 104), font(SERIF_I, 118), font(POP_XB, 112)
+    strip = Image.new('RGBA', (W, 320), (0, 0, 0, 0)); d = ImageDraw.Draw(strip)
+    w1 = d.textlength(line1, font=f1)
+    d.text(((W - w1) / 2, 120), line1, font=f1, fill=WHITE, anchor='ls', stroke_width=2, stroke_fill=(0, 0, 0, 70))
+    wi = d.textlength(small, font=fi) if small else 0
+    ws, gap = d.textlength(punch, font=fs), (26 if small else 0)
+    x = (W - (wi + gap + ws)) / 2 + 40
+    if small:
+        d.text((x, 262), small, font=fi, fill=WHITE, anchor='ls', stroke_width=2, stroke_fill=(0, 0, 0, 70))
+    sx = x + wi + gap
+    wipe = ease_out((t - 0.35) / 0.3)
+    if wipe > 0:
+        d.rounded_rectangle([sx - 14, 180, sx - 14 + (ws + 28) * wipe, 280], radius=10, fill=HILITE + (240,))
+    d.text((sx, 262), punch, font=fs, fill=INK if wipe > 0.6 else WHITE, anchor='ls')
+    strip = soft_shadow(strip, 7, 3, 130).rotate(tilt, resample=Image.BICUBIC)
+    s = 0.88 + 0.12 * spring(t - 0.05, 2.6, 0.55)
+    a = ease_out(t / 0.12) * fade_out(t, dur, 0.25)
+    strip = strip.resize((int(strip.width * s), int(strip.height * s)), Image.LANCZOS)
+    fr.alpha_composite(with_alpha(strip, a), (int((W - strip.width) / 2), int(cy - strip.height / 2)))
+    return fr
 
 
 # ---------------- grade ----------------

@@ -28,10 +28,14 @@ Use only these three kinds, and only where they add information. Never use UI ca
    - A plain IG "Classic" box: a white rounded box with Helvetica Neue Bold at 46 px, left aligned. It fades in and doesn't bounce.
    - Use it for credits ("drone: @handle") and the odd one-line aside.
 
-## Opening title (CLAUDE.md rule)
+## Opening title (`title_card()`)
 
-- 4–5 words, on screen by 2 s, the hook in words. Set it in the caption type (Poppins SemiBold, lowercase, about 72 px) with the same soft shadow and a small tilt, above the head, so it reads as part of the footage rather than a title card.
-- It sits on its own FCPXML lane named "Title" (plus an alpha `.mov`) and doesn't count toward the 3 overlays.
+Harnoor approved this on the Neighborsgiving reel ("love it", Nov 25, 2026).
+- **At most 4 words, on screen from 0 s to about 3 s**, the hook in words (e.g. "biggest potluck in SF"). It may carry on across the first cut.
+- **Two lines, handmade:** Poppins ExtraBold 104 px on top ("biggest potluck"), then a small Instrument Serif Italic word plus the punch word in ExtraBold on a yellow marker swipe (`#FFD65C`) that wipes in just after the pop ("*in* **SF**"). White with the soft caption shadow, the whole block tilted −3°.
+- **Motion:** fade in over 0.12 s with a quick spring from 88% (settles inside 10 frames), the swipe wipes in over 0.3 s from 0.35 s, and a 0.25 s fade out.
+- **Placement:** never over the face. On a selfie, put it on the chest band (y ≈ 1350) below the face and above any bottom sticker; the captions stay above the head. Check stills on every shot it spans.
+- It sits on its own FCPXML lane named "Title" (an alpha `.mov`) and doesn't count toward the 3 overlays.
 
 ## Captions (`caption()`)
 
@@ -106,13 +110,14 @@ The shared rules in [What makes it premium](../../../README.md#what-makes-it-pre
 
 **FCP notes**
 
-- **The LUT on the GRADE layer is assigned by hand.** The FCPXML can't carry the LUT file. In FCP open the timeline Index, filter to Titles, select GRADE, open the Video inspector, then Custom LUT, and pick it. Background clicks on the timeline don't select clips; the Index does.
+- **The LUT on the GRADE layer is assigned by hand once.** A generated FCPXML can't carry the LUT file. In FCP open the timeline Index, filter to Titles, select GRADE, open the Video inspector, then Custom LUT, and pick it. Background clicks on the timeline don't select clips; the Index does. Once it's set, **FCP's own export carries the choice** (an encoded `LUT` param), so a project rebuilt from his re-export keeps the grade.
+- **Adding to his re-export** (a title, a fix): copy his `Info.fcpxml`, add only the new asset and its connected clip (the title goes on the first spine clip at its `start`, one lane above everything attached to it), rename the project ("… - title") and **drop the project `uid`** so the import lands next to his instead of colliding with it. Diff against his export: only the additions may differ. Validate against the DTD version his export declares (1.15 here).
 - **Instagram/yt-dlp downloads are often VP9**, which FCP shows as "missing plug-in". Make a ProRes 422 copy at the same frame rate (`ffmpeg -c:v prores_ks -profile:v 2 -r 30`) and link that.
 - iPhone clips with no rotation tag need `adjust-transform rotation` (negative is clockwise), with the scale computed from the unrotated frame.
 
 ## Kit
 
-- `kit/golden_vlog.py`: overlays, captions, `make_lut`, `film_finish`. It's generic, with fonts from this repo.
+- `kit/golden_vlog.py`: overlays, captions, `title_card`, `make_lut`, `film_finish`. It's generic, with fonts from this repo.
 - `kit/lift.swift`: Vision subject lift for the cutouts.
 - `kit/golden_film.cube`: the grade.
 - `kit/sample.py`: renders a demo still from a drawn stand-in scene (`python sample.py out.jpg`).
