@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=960" />
+<title>IMG_0027 factory scenes</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+  /* top half of the RPN split (1080x960), drawn in the reel's own kit: conveyor-yellow accent, pixel type, graphite dot floor.
+     Composition time = reel output time (s). Hook B scenes: H 0-4.53 wall of five real software-factory talk thumbnails from frame 0; P 26.53-44.23 the loop; R 44.23-59.63 two job roles. Logos sit blurred from frame 0 and sharpen on the word. */
+  @font-face { font-family: Px; src: url(assets/fonts/PixelifySans.ttf); font-weight: 400 700; }
+  @font-face { font-family: Vt; src: url(assets/fonts/VT323.ttf); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 960px; overflow: hidden; background: #0C0C09; }
+  :root { --acc: #F5E14A; --ink: #FAFAF4; --dim: #A09E8C; --card: #1E1E16; --line: #4E4C34; --bg: #0C0C09; }
+  #root { position: relative; width: 1080px; height: 960px; overflow: hidden; color: var(--ink); font-family: Px, monospace; }
+  .clip { position: absolute; inset: 0; }
+  #floor { background: url(assets/floor.png) 0 0 / 1080px 960px; }
+  .abs { position: absolute; }
+  .hd { left: 0; right: 0; text-align: center; font-weight: 700; font-size: 56px; letter-spacing: 3px; }
+  .sub { left: 0; right: 0; text-align: center; font-size: 30px; color: var(--dim); letter-spacing: 3px; }
+  .src { left: 0; right: 0; top: 852px; text-align: center; font-family: Vt; font-size: 30px; color: var(--dim); letter-spacing: 2px; }
+  .src b { color: var(--ink); font-weight: 400; }
+  .vt { font-family: Vt; }
+  .acc { color: var(--acc); }
+  .shadow { box-shadow: 6px 6px 0 rgba(0,0,0,.7); }
+  img.logo { filter: invert(1); }
+
+  /* L: Lauren Tan */
+  #lAv { left: 90px; top: 70px; width: 250px; height: 250px; border: 4px solid var(--ink); border-radius: 20px; overflow: hidden; }
+  #lAv img { width: 100%; height: 100%; }
+  #lName { left: 380px; top: 96px; font-size: 70px; font-weight: 700; letter-spacing: 3px; }
+  #lHandle { left: 384px; top: 186px; font-family: Vt; font-size: 44px; color: var(--acc); letter-spacing: 2px; }
+  #lRole { left: 384px; top: 236px; font-size: 30px; color: var(--dim); letter-spacing: 3px; }
+  #lGrid { left: 90px; top: 372px; width: 900px; height: 300px; display: grid; grid-template-columns: repeat(25, 32px); gap: 4px; }
+  #lGrid i { width: 32px; height: 32px; background: var(--card); border: 2px solid var(--line); display: block; }
+  #lGrid i.on { background: var(--acc); border-color: #8C7E10; }
+  #lBig { left: 0; right: 0; top: 456px; text-align: center; }
+  #lBig .n { font-family: Vt; font-size: 150px; line-height: .9; color: var(--acc); text-shadow: 0 0 36px rgba(245,225,74,.55), 6px 6px 0 #000; letter-spacing: 4px; }
+  #lBig .m { font-size: 46px; font-weight: 700; letter-spacing: 6px; text-shadow: 4px 4px 0 #000; }
+
+
+  /* H: hook B - nobody writes code or prompts; everyone builds software factories (real YouTube thumbnails) */
+  #hHd { top: 60px; }
+  .nope { position: absolute; left: 140px; width: 800px; height: 150px; background: var(--card); border: 3px solid var(--line);
+        display: flex; align-items: center; justify-content: center; font-size: 64px; font-weight: 700; letter-spacing: 4px; }
+  .nope .strike { left: 4%; right: 4%; height: 10px; margin-top: -5px; }
+  .nope.dead { color: var(--dim); }
+  .th { position: absolute; width: 440px; height: 248px; margin-left: -220px; margin-top: -124px; border: 4px solid var(--ink); overflow: hidden; box-shadow: 8px 8px 0 rgba(0,0,0,.75); }
+  .th img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .th.hero { width: 560px; height: 315px; margin-left: -280px; margin-top: -158px; border-color: var(--acc); box-shadow: 0 0 40px rgba(245,225,74,.45), 8px 8px 0 rgba(0,0,0,.75); }
+  #hQ { left: 0; right: 0; top: 250px; text-align: center; font-family: Vt; font-size: 260px; color: var(--acc); text-shadow: 0 0 40px rgba(245,225,74,.6), 8px 8px 0 #000; }
+
+  /* E: how we build software */
+  .step { position: absolute; left: 110px; width: 860px; height: 128px; background: var(--card); border: 3px solid var(--line);
+          display: flex; align-items: center; gap: 30px; padding: 0 34px; }
+  .step .no { font-family: Vt; font-size: 64px; color: var(--dim); width: 70px; }
+  .step .nm { font-size: 46px; font-weight: 700; letter-spacing: 3px; flex: 1; }
+  .step .ic { width: 110px; height: 80px; display: flex; align-items: center; justify-content: center; }
+  .step .ic img { height: 72px; }
+  .step.live { border-color: var(--acc); box-shadow: 0 0 34px rgba(245,225,74,.3); }
+  .step.live .no { color: var(--acc); }
+  .rail { position: absolute; left: 168px; width: 4px; background: var(--line); }
+
+  /* P: the loop */
+  #ring { left: 290px; top: 175px; width: 500px; height: 500px; }
+  .node { position: absolute; width: 330px; height: 118px; margin-left: -165px; margin-top: -59px; background: var(--card); border: 3px solid var(--line);
+          display: flex; align-items: center; justify-content: center; gap: 18px; font-size: 34px; font-weight: 700; letter-spacing: 2px; text-align: center; }
+  .node img { height: 62px; }
+  .node.live { border-color: var(--acc); }
+  #center { left: 390px; top: 360px; width: 300px; height: 130px; text-align: center; }
+  #cTop { font-size: 34px; font-weight: 700; letter-spacing: 3px; color: var(--dim); }
+  #cMain { font-size: 50px; font-weight: 700; letter-spacing: 3px; color: var(--acc); text-shadow: 0 0 26px rgba(245,225,74,.5); }
+  .strike { position: absolute; left: 6%; right: 6%; top: 50%; height: 6px; background: var(--acc); transform-origin: 0 50%; }
+  .bots { display: flex; gap: 10px; }
+  .bot { width: 46px; height: 40px; border: 4px solid var(--ink); position: relative; }
+  .bot::before, .bot::after { content: ''; position: absolute; top: 12px; width: 8px; height: 8px; background: var(--acc); }
+  .bot::before { left: 8px; } .bot::after { right: 8px; }
+
+  /* R: two job roles */
+  .role { position: absolute; left: 90px; width: 900px; height: 270px; background: var(--card); border: 3px solid var(--line); padding: 30px 40px; }
+  .role .no { font-family: Vt; font-size: 76px; color: var(--acc); line-height: .8; }
+  .role .nm { font-size: 62px; font-weight: 700; letter-spacing: 3px; margin-top: 10px; }
+  .role .ds { font-size: 32px; color: var(--dim); letter-spacing: 2px; margin-top: 16px; }
+  .role .ds b { color: var(--ink); font-weight: 400; }
+  .role.live { border-color: var(--acc); box-shadow: 0 0 34px rgba(245,225,74,.25); }
+  .tagnew { position: absolute; right: 34px; top: 30px; font-family: Vt; font-size: 34px; background: var(--acc); color: var(--bg); padding: 2px 14px; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="59.6333" data-width="1080" data-height="960">
+  <div id="floor" class="clip" data-start="0" data-duration="59.6333" data-track-index="0"></div>
+
+  <div id="sH" class="clip" data-start="0" data-duration="4.533" data-track-index="1">
+    <div id="hB" class="clip">
+      <div class="abs hd" style="top:34px">EVERYONE IS <span class="acc">BUILDING</span></div>
+      <div id="t1" class="th" style="left:280px;top:250px;transform:rotate(-4deg)"><img src="assets/thumbs/SkoT4RkteSA.jpg" alt="" /></div>
+      <div id="t2" class="th" style="left:800px;top:240px;transform:rotate(3deg)"><img src="assets/thumbs/tGbjIvvYuHE.jpg" alt="" /></div>
+      <div id="t3" class="th" style="left:270px;top:520px;transform:rotate(3deg)"><img src="assets/thumbs/htM02KMNZnk.jpg" alt="" /></div>
+      <div id="t4" class="th" style="left:810px;top:530px;transform:rotate(-3deg)"><img src="assets/thumbs/iheWKg2Tkrk.jpg" alt="" /></div>
+      <div id="t5" class="th hero" style="left:540px;top:390px"><img src="assets/thumbs/rnDm57Py54A.jpg" alt="" /></div>
+      <div id="hQ" class="abs">?</div>
+      <div class="abs src" style="top:880px">YOUTUBE · <b>FACTORY · CURSOR · BOUNDARY · AI ENGINEER</b> · 2026</div>
+    </div>
+  </div>
+
+  <div id="sP" class="clip" data-start="26.5333" data-duration="17.7" data-track-index="3">
+    <div class="abs hd" id="pHd" style="top:40px">THE FEEDBACK LOOP</div>
+    <svg id="ring" class="abs" viewBox="0 0 500 500">
+      <circle cx="250" cy="250" r="230" fill="none" stroke="#4E4C34" stroke-width="6" stroke-dasharray="14 10" />
+      <circle id="arc" cx="250" cy="250" r="230" fill="none" stroke="#F5E14A" stroke-width="8" stroke-dasharray="1445" stroke-dashoffset="1445" transform="rotate(-90 250 250)" />
+      <rect id="dot" x="-12" y="-12" width="24" height="24" fill="#F5E14A" />
+    </svg>
+    <div id="nTop" class="node" style="left:540px;top:195px"><span id="nTopA">YOU WRITE CODE</span><span id="nTopB" style="position:absolute;opacity:0">CODING AGENT</span></div>
+    <div id="nRight" class="node" style="left:820px;top:425px;width:260px;margin-left:-130px"><img class="logo" src="assets/logos/github.svg" alt="" /><span>GITHUB</span></div>
+    <div id="nBot" class="node" style="left:540px;top:655px;width:420px;margin-left:-210px"><span id="nBotA" style="position:relative">HUMAN REVIEW<i id="strike" class="strike"></i></span><span id="nBotB" style="position:absolute;opacity:0;display:flex;gap:16px;align-items:center"><span class="bots"><i class="bot"></i><i class="bot"></i><i class="bot"></i></span>REVIEW AGENTS</span></div>
+    <div id="nLeft" class="node" style="left:260px;top:425px;width:260px;margin-left:-130px">FEEDBACK</div>
+    <div id="center" class="abs"><div id="cTop">ALL IN</div><div id="cMain">ONE SYSTEM</div></div>
+  </div>
+
+  <div id="sR" class="clip" data-start="44.2333" data-duration="15.4" data-track-index="4">
+    <div class="abs hd" id="rHd" style="top:40px"><span class="vt acc" style="font-size:76px;display:inline-block">2</span> NEW JOB ROLES</div>
+    <div id="r0" class="role" style="top:160px;height:280px"><div class="no">01</div><div class="nm">PRODUCT ENGINEER</div><div class="ds" id="r0d">DESIGNS + BUILDS <b>THE PRODUCT</b></div></div>
+    <div id="r1" class="role" style="top:470px;height:330px"><div class="tagnew">NEW</div><div class="no">02</div><div class="nm">FACTORY ENGINEER</div><div class="ds" id="r1d">MAINTAINS <b>THE FACTORY</b></div><div class="ds" id="r1e" style="margin-top:6px">KEEPS <b>THE LOOP</b> WORKING</div></div>
+    <div class="abs src">TERM: <b>ZACH LLOYD, WARP</b> · "BECOMING A FACTORY ENGINEER"</div>
+  </div>
+</div>
+
+<script>
+  // reel word onsets (edit/main/out_words.json), seconds
+  const D = -7.7667;   // hook B: the 7.77 s Lauren Tan intro is gone, everything after the hook moves up
+  const H = { prompting: 0.06, dead: 0.87, everyone: 1.54, creating: 2.06, sw: 2.40, factories: 2.83, these: 4.13 };
+  const T0 = { pcode: 36.02, github: 36.91, feedback: 39.16, agents: 40.57, humans: 41.40, whole: 42.42, codingagent: 44.94,
+              review: 47.53, all: 48.56, onesys: 49.77, build: 51.13,
+              two: 52.67, roles: 53.10, product: 55.13, design: 56.23, build2: 57.08, factory: 58.57, maintain: 60.53, loop: 65.88 };
+  const T = Object.fromEntries(Object.entries(T0).map(([k, v]) => [k, v + D]));
+  const tl = gsap.timeline({ paused: true });
+  const BLUR = { filter: 'invert(1) blur(14px)', opacity: 0.32 }, SHARP = { filter: 'invert(1) blur(0px)', opacity: 1 };   // logos: keep the white invert inside the tween
+  const pop = (sel, at, y = 24) => tl.fromTo(sel, { y, opacity: 0 }, { y: 0, opacity: 1, duration: 0.28, ease: 'power3.out' }, at);
+
+  // ---------- H (hook B): the five real thumbnails are the intro frame, from frame 0 ----------
+  ['#t1', '#t2', '#t3', '#t4', '#t5'].forEach(x => tl.set(x, { opacity: 0 }, 0)); tl.set('#hQ', { opacity: 0 }, 0);
+  const slam = (x, at) => tl.fromTo(x, { opacity: 0, scale: 1.35 }, { opacity: 1, scale: 1, duration: 0.16, ease: 'power3.out' }, at);
+  slam('#t1', 0.0); slam('#t2', 0.12); slam('#t3', H.prompting + 0.3); slam('#t4', H.prompting + 0.45); slam('#t5', H.dead);
+  tl.fromTo('#sH', { scale: 1 }, { scale: 1.03, duration: 4.533, ease: 'none', transformOrigin: '50% 50%' }, 0);
+  tl.fromTo('#t5', { scale: 1.1 }, { scale: 1, duration: 0.25, ease: 'back.out(2)' }, H.factories);   // after the burst: the hero pops on "factories"
+  tl.to(['#t1', '#t2', '#t3', '#t4'], { opacity: 0.45, duration: 0.25 }, H.these - 0.1);
+  tl.fromTo('#hQ', { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.22, ease: 'back.out(2.4)' }, H.these);
+
+  // ---------- P ----------
+  const P0 = 34.3 + D, C = 1445;
+  tl.fromTo('#sP', { scale: 1 }, { scale: 1.025, duration: 17.7, ease: 'none', transformOrigin: '50% 50%' }, P0);
+  pop('#pHd', P0, -24);
+  ['#nTop', '#nRight', '#nBot', '#nLeft', '#center'].forEach(s => tl.set(s, { opacity: 0 }, 0));
+  tl.set('#nRight img', BLUR, 0); tl.set('#strike', { scaleX: 0 }, 0); tl.set('#dot', { opacity: 0 }, 0);
+  const node = (s, at) => { tl.fromTo(s, { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.28, ease: 'back.out(2)' }, at); tl.set(s, { className: 'node live' }, at); };
+  node('#nTop', T.pcode); tl.to('#arc', { strokeDashoffset: C * 0.75, duration: 0.6, ease: 'power2.inOut' }, T.pcode + 0.2);
+  node('#nRight', T.github); tl.to('#nRight img', { ...SHARP, duration: 0.35 }, T.github);
+  tl.to('#arc', { strokeDashoffset: C * 0.5, duration: 0.7, ease: 'power2.inOut' }, T.github + 0.6);
+  node('#nBot', T.feedback - 0.3);
+  tl.to('#strike', { scaleX: 1, duration: 0.25, ease: 'power2.out' }, T.humans);
+  tl.to('#nBotA', { opacity: 0, duration: 0.2 }, T.humans + 0.6); tl.to('#nBotB', { opacity: 1, duration: 0.2 }, T.humans + 0.6);
+  tl.to('#arc', { strokeDashoffset: C * 0.25, duration: 0.7, ease: 'power2.inOut' }, T.agents);
+  node('#nLeft', T.whole); tl.to('#arc', { strokeDashoffset: 0, duration: 0.7, ease: 'power2.inOut' }, T.whole + 0.2);
+  tl.to('#nTopA', { opacity: 0, duration: 0.2 }, T.codingagent); tl.to('#nTopB', { opacity: 1, duration: 0.2 }, T.codingagent);
+  tl.fromTo('#nTop', { scale: 1.12 }, { scale: 1, duration: 0.3, ease: 'back.out(2)' }, T.codingagent);
+  tl.fromTo('#nBot', { scale: 1.12 }, { scale: 1, duration: 0.3, ease: 'back.out(2)' }, T.review);
+  // the dot runs the closed loop from "all together" to the end (deterministic: driven by the timeline)
+  const d = { a: 0 };
+  tl.set('#dot', { opacity: 1 }, T.all);
+  tl.to(d, { a: 4 * Math.PI, duration: 52.0 + D - T.all, ease: 'none', onUpdate: () => {
+      const x = 250 + 230 * Math.cos(d.a - Math.PI / 2), y = 250 + 230 * Math.sin(d.a - Math.PI / 2);
+      document.getElementById('dot').setAttribute('transform', `translate(${x} ${y})`); } }, T.all);
+  tl.fromTo('#center', { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: 'back.out(2)' }, T.onesys);
+  tl.call(() => {}, null, T.build);
+  tl.to('#cTop', { opacity: 0, duration: 0.15 }, T.build);
+  tl.set('#cTop', { textContent: 'YOU BUILD' }, T.build + 0.15); tl.to('#cTop', { opacity: 1, duration: 0.15 }, T.build + 0.15);
+  tl.set('#cMain', { textContent: 'THE FACTORY' }, T.build + 0.15);
+
+  // ---------- R ----------
+  const R0 = 52.0 + D;
+  tl.fromTo('#sR', { scale: 1 }, { scale: 1.03, duration: 15.4, ease: 'none', transformOrigin: '50% 50%' }, R0);
+  tl.set(['#rHd', '#r0', '#r1', '#r0d', '#r1d', '#r1e', '#sR .src'], { opacity: 0 }, 0);
+  pop('#rHd', R0, -24); tl.fromTo('#rHd .vt', { scale: 1.8 }, { scale: 1, duration: 0.3, ease: 'back.out(2.4)' }, T.two);
+  pop('#r0', T.product - 0.25); tl.set('#r0', { className: 'role live' }, T.product - 0.25);
+  pop('#r0d', T.design, 12);
+  pop('#r1', T.factory - 0.25); tl.set('#r1', { className: 'role live' }, T.factory - 0.25); tl.set('#r0', { className: 'role' }, T.factory - 0.25);
+  tl.to('#r0', { opacity: 0.5, duration: 0.25 }, T.factory - 0.25);
+  tl.fromTo('#r1 .tagnew', { scale: 1.6, rotation: -10 }, { scale: 1, rotation: 0, duration: 0.3, ease: 'back.out(2.4)' }, T.factory);
+  pop('#r1d', T.maintain, 12); pop('#r1e', T.loop - 0.2, 12);
+  tl.to('#sR .src', { opacity: 1, duration: 0.3 }, T.factory + 0.5);
+  tl.set({}, {}, 67.4 + D);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines['main'] = tl;
+</script>
+</body>
+</html>
